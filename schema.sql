@@ -1,1 +1,0 @@
-CREATE DATABASE bbc_db;
