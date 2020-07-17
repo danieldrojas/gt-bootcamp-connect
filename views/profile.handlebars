@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col s10 offset-s1">
             <div class="card">
-                <div class="row">
+                <div class="row" id="photoRow">
                     <div class="col s4">
                         <div class="card-image">
                             <img
@@ -18,14 +18,22 @@
                             <span class="card-title">User Name</span>
                         </div>
                     </div>
+                    <div class="col s6">
+                        <h5>Recent Posts:</h5>
+                        <div id="postsSpace">Handlebars -- Load Posts here</div>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col s4 left">
+                    <div class="col s4 left-align">
                         <div class="card-content">
-                            <ul>
-                                <li id="email">Email:</li>
-                                <li id="github">GitHub:</li>
-                                <li id="linkedIn">LinkedIn:</li>
+                            <ul id="userInfo">
+                                <li id="location">Location: </li>
+                                <li id="email">Email: </li>
+                                <li id="github">GitHub: </li>
+                                <li id="linkedIn">LinkedIn: </li>
+                                <li></li>
+                                <li id="bio">Bio:</li>
+                                <p id="bioSpace">Here is where the bio information will go!</p>
                             </ul>
                         </div>
                     </div>

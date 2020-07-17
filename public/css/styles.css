@@ -1,3 +1,17 @@
-#login{
-    border: 1px black solid;
+#loginForm{
+    border: 1px lightgray solid;
+    padding:1rem;
+    margin-top: 3rem
+}
+.card .card-content{
+    padding-top: .4rem;
+}
+li{
+    font-weight: bold;
+}
+#photoRow{
+    margin-bottom: .5rem
+}
+#userInfo{
+    line-height: 2rem;
 }
