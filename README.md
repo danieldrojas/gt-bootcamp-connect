@@ -1,1 +1,3 @@
-# gt-bootcamp-connect-
+# gt-bootcamp-connect
+
+This is our project 
