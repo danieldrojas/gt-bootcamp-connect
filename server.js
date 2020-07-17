@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
-const APIController = require("./controllers/api-routes")
+const APIController = require("./controllers/apiController")
 // const TestController = require("./controllers/testController")
 /**
  * MIDDLEWARE
