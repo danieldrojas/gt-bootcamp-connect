@@ -1,17 +1,26 @@
-#loginForm{
-    border: 1px lightgray solid;
-    padding:1rem;
-    margin-top: 3rem
+#loginForm {
+  border: 1px lightgray solid;
+  padding: 1rem;
+  margin-top: 3rem;
 }
-.card .card-content{
-    padding-top: .4rem;
+.card .card-content {
+  padding-top: 0.4rem;
 }
-li{
-    font-weight: bold;
+li {
+  font-weight: bold;
 }
-#photoRow{
-    margin-bottom: .5rem
+#photoRow {
+  margin-bottom: 0.5rem;
 }
-#userInfo{
-    line-height: 2rem;
+#userInfo {
+  line-height: 2rem;
+}
+#categoryRow {
+  margin-top: 2rem;
+}
+.catBtn {
+  margin-left: 2rem;
+}
+.brand-logo {
+  margin-left: auto;
 }
