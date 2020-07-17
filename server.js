@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
-// const APIController = require("./controllers/apiController")
+const APIController = require("./controllers/apiController")
 // const TestController = require("./controllers/testController")
 /**
  * MIDDLEWARE
@@ -30,7 +30,7 @@ app.use(ViewsController);
  * APP LISTEN
  */
 db.sequelize
-    .sync()
+    .sync({force: true})
     .then(() => {
         app.listen(PORT, function () {
             // Log (server-side) when our server has started
