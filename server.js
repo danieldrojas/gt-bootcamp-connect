@@ -30,7 +30,7 @@ app.use(ViewsController);
  * APP LISTEN
  */
 db.sequelize
-    .sync({force: true})
+    .sync()
     .then(() => {
         app.listen(PORT, function () {
             // Log (server-side) when our server has started
