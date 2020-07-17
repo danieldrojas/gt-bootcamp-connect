@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 //routes
 app.use(ViewsController);
-// app.use(APIController);
+app.use(APIController);
 // app.use("/api/test/", TestController) //run all traffic that has "/api/test/" into TestController
 /**
  * gets wrapped up in DB Connection
