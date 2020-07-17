@@ -1,0 +1,3 @@
+CREATE DATABASE bcc_db;
+
+CREATE TABLE User;
