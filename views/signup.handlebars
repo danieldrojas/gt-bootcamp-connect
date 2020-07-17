@@ -1,5 +1,43 @@
-  <nav>
+<nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">BootCampConnect</a>
+        <a href="#" class="brand-logo">BootCampConnect</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a id="Sign Up" href="/profile">Sign Up</a></li>
+        </ul>
     </div>
-  </nav>
+</nav>
+<div class="container" id="login">
+    <div class="row">
+        <form class="col s6 offset-s3" id="loginForm">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="email">First Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="password">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" id="signUpSubmit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <p>Already have an account? <a href="#">Login here!</a></p>
+        </form>
+    </div>
+</div>
