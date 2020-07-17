@@ -1,3 +1,7 @@
+// require db from the modles folder 
+// create CRUD routes for the following models USER Category and Post (update ,delete )
+// module export 
+
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -13,8 +17,8 @@ const db = require("../models");
 
 router.post("/", (req, res) => {
     // if (req.boy) {
-        console.log(req.body)
-      return  res.json(req.body).redirect(300, "/profile")
+    console.log(req.body)
+    return res.json(req.body).redirect(300, "/profile")
     // };
     //     res.status(400).json({
     //         error: true,
