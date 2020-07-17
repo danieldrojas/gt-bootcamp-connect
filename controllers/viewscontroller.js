@@ -16,3 +16,7 @@ router.get("/profile", function (req, res) {
 
 
 module.exports = router;
+
+
+//ANOTHER route  for dashboard 
+//another handlebars for the dashboard

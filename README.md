@@ -1,3 +1,3 @@
 # gt-bootcamp-connect
 
-This is our project 
+This is our proj
