@@ -13,7 +13,9 @@ router.get("/profile", function (req, res) {
   res.render("profile");
 });
 
-
+router.get("/dashboard", function(req,res){
+  res.render("dashboard")
+})
 
 module.exports = router;
 // another route for the dashboaerd 

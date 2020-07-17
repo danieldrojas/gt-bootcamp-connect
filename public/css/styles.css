@@ -15,3 +15,9 @@ li{
 #userInfo{
     line-height: 2rem;
 }
+#categoryRow{
+    margin-top:2rem
+}
+.catBtn{
+    margin-left: 2rem;
+}
