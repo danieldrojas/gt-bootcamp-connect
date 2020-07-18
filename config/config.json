@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "N@poleonM",
+=======
+    "password": "Familiar1410.",
+>>>>>>> 3732e115a76cd6ae5345a83d3fb2a9da339ffaa7
     "database": "bcc_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
