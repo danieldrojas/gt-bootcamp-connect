@@ -5,7 +5,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-
+const passport = require("../config/passport")
 
 // require db from the models folder 
 // create CRUD routes for the following models USER Category and Post (update ,delete )
@@ -13,7 +13,10 @@ const db = require("../models");
 
 // Routes
 // =============================================================
-
+router.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
+  });
+  
 
 router.post("/", (req, res) => {
     // if (req.boy) {
@@ -26,6 +29,8 @@ router.post("/", (req, res) => {
     //         message: "Unable to create new user.",
     //     });
 });
+
+
 
 
 router.post("/api/signup", function (req, res) {

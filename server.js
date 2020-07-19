@@ -3,9 +3,12 @@ const exphbs = require("express-handlebars");
 //Define variables
 const PORT = process.env.PORT || 8080;
 const app = express();
+const passport = require("passport");
+const path = require("path");
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
 const APIController = require("./controllers/apiController")
+
 // const TestController = require("./controllers/testController")
 /**
  * MIDDLEWARE
@@ -20,7 +23,8 @@ app.set("view engine", "handlebars");
  * API ROUTES
  */
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+app.use('/public/', express.static(path.join(__dirname, 'public')))
+// app.use(express.static("public"));
 //routes
 app.use(ViewsController);
 app.use(APIController);
