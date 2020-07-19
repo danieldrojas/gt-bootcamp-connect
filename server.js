@@ -8,7 +8,7 @@ const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
 const UserController = require("./controllers/usercontroller");
 const PostController = require("./controllers/postcontroller")
-// const TestController = require("./controllers/testController")
+const LoginController = require("./controllers/logincontroller")
 /**
  * MIDDLEWARE
  */
@@ -28,6 +28,7 @@ app.use("/public", express.static(path.resolve(__dirname, 'public')));
 app.use(ViewsController);
 app.use(UserController);
 app.use(PostController);
+app.use(LoginController);
 // app.use("/api/test/", TestController) //run all traffic that has "/api/test/" into TestController
 /**
  * gets wrapped up in DB Connection

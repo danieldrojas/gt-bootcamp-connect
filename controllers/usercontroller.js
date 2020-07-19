@@ -1,6 +1,8 @@
-// require db from the modles folder 
-// create CRUD routes for the following models USER Category and Post (update ,delete )
-// module export 
+/**
+ *  THIS FILES HAS THE ROUTES TO CREATE A NEW USER
+ */
+
+
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -12,35 +14,32 @@ const db = require("../models");
  */
 
 //Getting all users
-router.get("/", (req, res) => {
-    // if (req.boy) {
-    const email = req.body.email;
-    console.log("This is email", email);
-    console.log("This is password: ", req.body.password);
+// router.get("/", (req, res) => {
 
 
-    // console.log("try  ", db.Validation.isEmail(email))
 
-    db.User.findAll({}).then(function (dbUser) {
-        // res.render(dbUser)
+//     // console.log("try  ", db.Validation.isEmail(email))
 
-        // console.log("This is the email: ", dbUser);
-        // res.redirect(307, "/profile");
-    })
-    //     .catch(function (err) {
-    //         console.log(err)
-    //     res.status(401).json(err);
-    // });
+//     db.User.findAll({}).then(function (dbUser) {
+//         // res.render(dbUser)
+
+//         // console.log("This is the email: ", dbUser);
+//         // res.redirect(307, "/profile");
+//     })
+//         .catch(function (err) {
+//             console.log(err)
+//         res.status(401).json(err);
+//     });
 
 
-});
+// });
 
 // create a new user 
 router.post("/api/signup", function (req, res) {
     console.log(req.body)
 
     db.User.create({
-        firstName: req.body.name,
+        firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         password: req.body.password,

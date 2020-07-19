@@ -15,16 +15,16 @@ const db = require("../models");
 router.post("/api/dashboard", (req, res) => {
 
     console.log(res.body)
-    
+
     db.Post.findAll({}).then(function (dbPosts) {
         res.json(dbPosts)
 
-    
+
     })
         .catch(function (err) {
             console.log(err)
-        res.status(401).json(err);
-    });
+            res.status(401).json(err);
+        });
 
 
 });
@@ -40,38 +40,39 @@ router.post("/api/posts", function (req, res) {
         .then(dbNewMessage => {
             res.json(dbNewMessage)
         })
-        // 
-        // res.json(req.body)
-        // res.redirect(307, "/profile");
-        // })
+
         .catch(function (err) {
             res.status(401).json(err);
         });
 });
 
-// /api/alerts/:id
-router.put("/api/profile", (req, res) => {
-
-
-    console.log(req.body)
-    db.User.update({
-        lastName: req.body.lastName,
+// update post 
+router.put("/api/dashboard", (req, res) => {
+    db.Post.update({
+        title: req.body.title,
+        body: req.body.body,
     },
         {
             where: {
                 id: req.body.id
             }
-        }).then(function (update) {
-            res.json(update);
+
+        })
+        .then(dbUpdatedMessage => {
+            console.log
+            res.json(dbUpdatedMessage)
+        })
+        .catch(function (err) {
+            res.status(401).json(err);
         });
 
 });
 
 // delete a post 
-router.delete("/api/posts/:id", (req, res) => {
+router.delete("/api/dashboard/:id", (req, res) => {
 
     console.log(req.params.id)
-    db.User.destroy({
+    db.Post.destroy({
         where: {
             id: req.params.id
         }
