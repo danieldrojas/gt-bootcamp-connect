@@ -1,0 +1,46 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">BootCampConnect</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="dashboardLink" href="./profile">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{{!-- ADD HREF OR LINK HERE FOR THIS TO WORK --}}
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/profile"id="dashboardLink" href="badges.html">Profile</a></li>
+</ul>
+<div class="container">
+    <div class="row" id="categoryRow">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost">New Post</button>
+        </div>
+    </div>
+    {{!-- </br> --}}
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h4>*Selected Category* Posts</h4>
+            <div class="postContainer">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">User Name</span>
+                                <p>Hi I am a developer at google. I used to be a bootcamper like you and have this job
+                                    opening!</p>
+                                <p class="right align-right" id="timeStamp"><small>Time Posted</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

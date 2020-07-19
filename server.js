@@ -5,8 +5,9 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
-// const APIController = require("./controllers/apiController")
-// const TestController = require("./controllers/testController")
+const UserController = require("./controllers/usercontroller");
+const PostController = require("./controllers/postcontroller")
+const LoginController = require("./controllers/logincontroller")
 /**
  * MIDDLEWARE
  */
@@ -23,14 +24,18 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 //routes
 app.use(ViewsController);
-// app.use(APIController);
+app.use(UserController);
+app.use(PostController);
+app.use(LoginController);
 // app.use("/api/test/", TestController) //run all traffic that has "/api/test/" into TestController
 /**
  * gets wrapped up in DB Connection
  * APP LISTEN
  */
 db.sequelize
+    // .sync({force: true})
     .sync()
+
     .then(() => {
         app.listen(PORT, function () {
             // Log (server-side) when our server has started
