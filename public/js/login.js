@@ -31,12 +31,13 @@ function loginUser(email, password) {
         password: password
     })
         .then(function (newUser) {
+            console.log('we hit the .then!!!!!!')
             window.location.replace("/dashboard");
             // If there's an error, log the error
         })
-        .catch(function (err) {
-            console.log(err);
-        });
+        // .catch(function (err) {
+        //     console.log(err);
+        // });
 
 };
 
