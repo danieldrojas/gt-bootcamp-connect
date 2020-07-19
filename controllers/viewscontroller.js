@@ -13,6 +13,9 @@ router.get("/profile", function (req, res) {
   res.render("profile");
 });
 
+router.get("/post", function(req, res) {
+  res.render("post");
+})
 router.get("/dashboard", function (req, res){
   res.render("dashboard");
 })
