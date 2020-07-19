@@ -1,1 +1,3 @@
-CREATE DATABASE bbc_db;
+CREATE DATABASE bcc_db;
+
+CREATE TABLE User;
