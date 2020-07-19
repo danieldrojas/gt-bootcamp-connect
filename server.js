@@ -35,8 +35,8 @@ app.use(LoginController);
  * APP LISTEN
  */
 db.sequelize
-    // .sync({force: true})
-    .sync()
+    // .sync()
+    .sync({force: true})
 
     .then(() => {
         app.listen(PORT, function () {
