@@ -6,7 +6,7 @@ const app = express();
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
 const UserController = require("./controllers/usercontroller");
-const PostController = require("./controllers/postcontroller")
+const PostController = require("./controllers/postcontroller2")
 const LoginController = require("./controllers/logincontroller")
 /**
  * MIDDLEWARE
