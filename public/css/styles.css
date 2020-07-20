@@ -40,3 +40,8 @@ li {
 #updateProfileBtn{
   margin: 1rem;
 }
+
+.dropdown-content{
+  width: max-content !important;
+  height:auto !important;
+}
