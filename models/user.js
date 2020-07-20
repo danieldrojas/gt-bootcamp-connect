@@ -34,10 +34,6 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true,
       },
     },
-
-    password: DataTypes.STRING,
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
     github: DataTypes.STRING,
     linkedIn: DataTypes.STRING,
     bootcamp: DataTypes.STRING,
