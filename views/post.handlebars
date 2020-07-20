@@ -46,9 +46,36 @@
                                             <label for="post-text">Write your post here!</label>
                                         </div>
                                     </div>
+
+                                    {{!-- HERE IS WHERE STACK OVERFLOW WORKS --}}
+                                    <script
+                                        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                                        rel="stylesheet">
+                                    <!-- Compiled and minified CSS -->
+                                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+                                    <!-- Compiled and minified JavaScript -->
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+                                    <ul id="dropdown" class="dropdown-content">
+                                        <li><a href="#">EMPOWER YOUR BUSINESS!</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                    <ul class="dds">
+                                        <li><a class="dropdown-trigger" data-target="dropdown">
+                                                Dropdown <i class="material-icons">arrow_drop_down</i></a>
+                                        </li>
+                                    </ul>
+                                    {{!-- STACK OVERFLOW END --}}
+                                    
                                     <div class="row">
-                                        <button class="btn waves-effect waves-light right" id="submitNewPost" type="submit"
-                                            id="loginSubmit">Submit Post!
+                                        <button class="btn waves-effect waves-light right" id="submitNewPost"
+                                            type="submit" id="loginSubmit">Submit Post!
                                             <i class="material-icons right">send</i>
                                         </button>
                                 </form>
@@ -62,3 +89,12 @@
     </div>
 </div>
 <script src="/js/post.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('.modal').modal();
+        $('.dropdown-trigger').dropdown();
+    });
+
+
+</script>
