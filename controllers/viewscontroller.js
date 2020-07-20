@@ -19,6 +19,9 @@ router.get("/post", function(req, res) {
 router.get("/dashboard", function (req, res){
   res.render("dashboard");
 })
+router.get("/edit_profile", function (req, res){
+  res.render("edit_profile");
+})
 
 
 

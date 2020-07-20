@@ -6,11 +6,10 @@ $(document).ready(function () {
     const emailInput = $("input#email");
     const passwordInput = $("input#password");
 
-
-
+    
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
-        console.log("Sign up Butotn clicked");
+        console.log("Sign up Button clicked");
         event.preventDefault();
         var userData = {
             firstName: firstNameInput.val().trim(),
@@ -35,14 +34,15 @@ $(document).ready(function () {
 function signUpUser(firstName, lastName ,email, password) {
     console.log("Ajax Post hit")
     $.post("/api/signup", {
-        firstName: firstName,
-        lastName: lastName,
         email: email,
-        password: password
+        password: password,
+        firstName: firstName,
+        lastName: lastName
+
     })
         .then(function (newUser) {
             console.log("newUser", newUser)
-            window.location.replace("/profile");
+            window.location.replace("/dashboard");
             // If there's an error, log the error
         })
         .catch(function (err) {

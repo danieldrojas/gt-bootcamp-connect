@@ -1,6 +1,8 @@
 const express = require("express");
+const session = require("express-session")
 const exphbs = require("express-handlebars");
 const path = require("path");
+const passport = require("./config/passport")
 //Define variables
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -18,9 +20,16 @@ app.use(express.json());
 //handlebars setup
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-/**VIEW ROUTES
- * API ROUTES
- */
+// passport
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+// VIEW ROUTES
+ 
+
+
+ // API ROUTES
+ 
 // Serve static content for the app from the "public" directory in the application directory.
 // app.use("/public", express.static(path.resolve(__dirname, 'public')));
 app.use(express.static("public"));
