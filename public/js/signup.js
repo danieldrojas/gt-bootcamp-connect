@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
-        console.log("Sign up Butotn clicked");
+        console.log("Sign up Button clicked");
         event.preventDefault();
         var userData = {
             firstName: firstNameInput.val().trim(),
