@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Familiar1410.",
+    "password": "NM97c13ab0!",
     "database": "bcc_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Familiar1410.",
+    "password": "",
     "database": "bcc_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

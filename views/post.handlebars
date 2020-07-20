@@ -1,0 +1,65 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">BootCampConnect</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="dashboardLink" href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{{!-- ADD HREF OR LINK HERE FOR THIS TO WORK --}}
+{{!-- <ul class="sidenav" id="mobile-demo">
+    <li><a href="/profile"id="dashboardLink" href="badges.html">Profile</a></li>
+</ul> --}}
+<div class="container">
+    {{!-- <div class="row" id="categoryRow">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost">New Post</button>
+        </div>
+    </div> --}}
+    {{!-- </br> --}}
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h4>Create New Post</h4>
+            <div class="postContainer">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="row">
+                                <form class="col s12 postForm">
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <input id="title" type="text">
+                                            <label for="title">Title</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s10 offset-s1">
+                                            <textarea id="post-text" class="materialize-textarea"></textarea>
+                                            <label for="post-text">Write your post here!</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn waves-effect waves-light right" id="submitNewPost" type="submit"
+                                            id="loginSubmit">Submit Post!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                        {{!-- <p>Don't have an account? <a href="#">Sign up here!</a></p> --}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/js/post.js"></script>

@@ -4,13 +4,13 @@
         <div class="container">
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a id="dashboardLink" href="badges.html">Back to Dashboard</a></li>
+                <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="/profile" id="dashboardLink" href="badges.html">Back to Dashboard</a></li>
+    <li><a href="./dashboard" id="dashboardLink">Back to Dashboard</a></li>
 </ul>
 
 <div class="container">
@@ -34,14 +34,18 @@
                     <div class="col s4 left-align">
                         <div class="card-content">
                             <ul id="userInfo">
-                                <li id="location">Location: </li>
-                                <li id="email">Email: </li>
-                                <li id="github">GitHub: </li>
-                                <li id="linkedIn">LinkedIn: </li>
+                                {{log profileUser}}
+                                {{log "I'm here"}}
+
+                                <li id="location">Location:{{profileUser.location}}  </li>
+                                <li id="email">Email: {{profileUser.email}}</li>
+                                <li id="github">GitHub:{{profileUser.GitHub}} </li>
+                                <li id="linkedIn">LinkedIn:{{profileUser.LinkedIn}} </li>
                                 <li></li>
                                 <li id="bio">Bio:</li>
                                 <p id="bioSpace">Here is where the bio information will go!</p>
                             </ul>
+                            <button class="waves-effect waves-light btn"><a id="editProfileBtn" data-value="{{profileUser.id}}" href="./edit_profile" class="noBlue">Edit Profile</a></button>
                         </div>
                     </div>
                 </div>
