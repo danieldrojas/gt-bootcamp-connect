@@ -42,7 +42,7 @@
                                 {{log profileUser}}
                                 {{log "I'm here"}}
 
-                                <li id="location">Location:{{profileUser.location}}  </li>
+                                <li id="location">Location:{{profileUser.location}} </li>
                                 <li id="email">Email: {{profileUser.email}}</li>
                                 <li id="github">GitHub:{{profileUser.GitHub}} </li>
                                 <li id="linkedIn">LinkedIn:{{profileUser.LinkedIn}} </li>
@@ -50,7 +50,8 @@
                                 <li id="bio">Bio:</li>
                                 <p id="bioSpace">Here is where the bio information will go!</p>
                             </ul>
-                            <button class="waves-effect waves-light btn noBlue updateProfileBtn" id="editProfileBtn">Edit Profile</button>
+                            <button class="waves-effect waves-light btn noBlue updateProfileBtn"
+                                id="editProfileBtn">Edit Profile</button>
                         </div>
                     </div>
                 </div>
@@ -61,12 +62,17 @@
 
 <script>
     const editProfileBtn = $("#editProfileBtn")
-    currentUser=parseInt(sessionStorage.getItem("currentUser"))
+    currentUser = parseInt(sessionStorage.getItem("currentUser"))
     let pathArr = window.location.pathname.split("/")
-    profileId = parseInt(pathArr[pathArr.length-1])
+    profileId = parseInt(pathArr[pathArr.length - 1])
     console.log(currentUser)
     console.log(profileId)
-    if(!profileId===currentUser){
-        editProfileBtn.style.display = "none"
+    if (profileId === currentUser) {
+        console.log("Boolean Passed")
+        editProfileBtn.attr("style", "display: initial")
     }
+
+    editProfileBtn.on("click", () => {
+        window.location.replace("/edit_profile/" + profileId)
+    })
 </script>
