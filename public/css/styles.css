@@ -30,10 +30,13 @@ li {
 /* .editHover {
   background: #E8F3FF 
 } */
-.updateProfileBtn{
+#editProfileBtn{
   margin: 1rem;
   display: none;
 }
 .noBlue{
   color:white;
+}
+#updateProfileBtn{
+  margin: 1rem;
 }

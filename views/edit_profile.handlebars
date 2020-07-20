@@ -16,26 +16,31 @@
                             <form class="col s12 profileEdit">
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="locationEdit" type="text" value="{{this.location}}">
-                                        <label for="locationEdit">Location</label>
+                                        <h6>Location</h6>
+                                        <input id="locationEdit" type="text" value="{{location}}">
+                                        {{!-- <label for="locationEdit">Location</label> --}}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="githubEdit" type="text" value="{{this.github}}">
-                                        <label for="githubEdit">Github</label>
+                                        <h6>Github</h6>
+                                        <input id="githubEdit" type="text" value="{{github}}">
+                                        {{!-- <label for="githubEdit">Github</label> --}}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="linkedinEdit" type="text" value="{{this.linkedin}}">
-                                        <label for="linkedinEdit">LinkedIn</label>
+                                        <h6>LinkedIn</h6>
+                                        <input id="linkedinEdit" type="text" value="{{linkedIn}}">
+                                        {{!-- <label for="linkedinEdit">LinkedIn</label> --}}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <textarea id="bioEdit" class="materialize-textarea" value="{{this.bio}}"></textarea>
-                                        <label for="bioEdit">Update your bio</label>
+                                        <h6>Bio</h6>
+                                        <textarea id="bioEdit" class="materialize-textarea"
+                                            value="{{bio}}"></textarea>
+                                        {{!-- <label for="bioEdit">Update your bio</label> --}}
                                     </div>
                                 </div>
                                 <button class="btn waves-effect waves-light right" id="updateProfileBtn"
