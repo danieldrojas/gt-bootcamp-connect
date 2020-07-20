@@ -17,14 +17,10 @@
 <div class="container">
     <div class="row" id="categoryRow">
         <div class="col s12">
-            <button class="waves-effect waves-light btn catBtn"
-                id="generalBtn">General</button>
-            <button class="waves-effect waves-light btn catBtn"
-                id="jobsBtn">Jobs</button>
-            <button class="waves-effect waves-light btn catBtn"
-                id="collaborateBtn">Collaborate</button>
-            <button onclick="location.href = '#'" class="waves-effect waves-light btn catBtn right"
-                id="newPost">New Post</button>
+            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost"><a href="/post" id="newPost" class="noBlue">New Post</a></button>
         </div>
     </div>
     {{!-- </br> --}}
@@ -50,7 +46,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     {{/each }}
 </div>

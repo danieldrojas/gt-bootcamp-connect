@@ -116,21 +116,21 @@ router.delete("/api/dashboard/:id", (req, res) => {
         res.json(post);
     });
 });
-
-router.put("/api/edit_profile", (req, res) => {
-    console.log(req.body);
-    db.Post.update(
-        {
-            location: req.body.location,
-            github: req.body.github,
-            linkedin: req.body.linkedin,
-            bio: req.body.bio,
-        },
-        {
-            where: {
-                id: req.body.id,
-            },
-        }
-    );
+// NEW PUT PATH FOR EDITING PROFILE
+router.put("/api/edit_profile/:id", (req, res) => {
+  console.log(req.body);
+  db.Post.update(
+    {
+      location: req.body.location,
+      github: req.body.github,
+      linkedin: req.body.linkedin,
+      bio: req.body.bio,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  );
 });
 module.exports = router;

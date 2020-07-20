@@ -33,6 +33,6 @@ li {
 #updateProfileBtn{
   margin: 1rem;
 }
-a{
+.noBlue{
   color:inherit;
 }

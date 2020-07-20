@@ -34,15 +34,18 @@
                     <div class="col s4 left-align">
                         <div class="card-content">
                             <ul id="userInfo">
-                                <li id="location">Location: <span class="inline-editable" id="locationInfo">Atlanta</span></li>
-                                <li id="email">Email: <span class="inline-editable" id="locationInfo">email@email.com</span></li>
-                                <li id="github">GitHub: <span class="inline-editable" id="locationInfo">gitHubUName</span></li>
-                                <li id="linkedIn">LinkedIn: <span class="inline-editable" id="locationInfo">LinkedIn</span></li>
+                                {{log profileUser}}
+                                {{log "I'm here"}}
+
+                                <li id="location">Location:{{profileUser.location}}  </li>
+                                <li id="email">Email: {{profileUser.email}}</li>
+                                <li id="github">GitHub:{{profileUser.GitHub}} </li>
+                                <li id="linkedIn">LinkedIn:{{profileUser.LinkedIn}} </li>
                                 <li></li>
                                 <li id="bio">Bio:</li>
                                 <p id="bioSpace">Here is where the bio information will go!</p>
                             </ul>
-                            <button class="waves-effect waves-light btn"><a id="editProfileBtn" href="./edit_profile">Edit Profile</a></button>
+                            <button class="waves-effect waves-light btn"><a id="editProfileBtn" data-value="{{profileUser.id}}" href="./edit_profile" class="noBlue">Edit Profile</a></button>
                         </div>
                     </div>
                 </div>

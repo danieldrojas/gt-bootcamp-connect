@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
       validate: {
-        len: [4],
+        len: [8],
       },
     },
     firstName: {
