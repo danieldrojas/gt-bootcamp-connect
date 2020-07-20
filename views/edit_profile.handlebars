@@ -5,6 +5,7 @@
         </div>
     </div>
 </nav>
+{{each}}
 <div class="row">
     <div class="col s8 offset-s2">
         <h4>Edit Your Profile</h4>
@@ -16,31 +17,25 @@
                             <form class="col s12 profileEdit">
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="locationEdit" type="text" value="">
+                                        <input id="locationEdit" type="text" value="{{this.location}}">
                                         <label for="locationEdit">Location</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="locationEdit" type="text" value="">
-                                        <label for="locationEdit">Email</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s8 offset-s1">
-                                        <input id="githubEdit" type="text" value="">
+                                        <input id="githubEdit" type="text" value="{{this.github}}">
                                         <label for="githubEdit">Github</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <input id="linkedinEdit" type="text" value="">
+                                        <input id="linkedinEdit" type="text" value="{{this.linkedin}}">
                                         <label for="linkedinEdit">LinkedIn</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8 offset-s1">
-                                        <textarea id="bioEdit" class="materialize-textarea" value=""></textarea>
+                                        <textarea id="bioEdit" class="materialize-textarea" value="{{this.bio}}"></textarea>
                                         <label for="bioEdit">Update your bio</label>
                                     </div>
                                 </div>
