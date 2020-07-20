@@ -36,7 +36,7 @@ const db = require("../models");
 
 // create a new user 
 router.post("/api/signup", function (req, res) {
-    console.log(req.body)
+    console.log("router.post api sign up",req.body)
 
     db.User.create({
         firstName: req.body.firstName,
