@@ -43,7 +43,7 @@ function signUpUser(firstName, lastName ,email, password) {
     })
         .then(function (newUser) {
             console.log("newUser", newUser)
-            window.location.replace("/dashbaord");
+            window.location.replace("/dashboard");
             // If there's an error, log the error
         })
         .catch(function (err) {
