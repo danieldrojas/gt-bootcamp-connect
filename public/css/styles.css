@@ -33,3 +33,6 @@ li {
 #updateProfileBtn{
   margin: 1rem;
 }
+a{
+  color:inherit;
+}

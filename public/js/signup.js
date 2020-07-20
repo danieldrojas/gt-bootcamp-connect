@@ -6,8 +6,7 @@ $(document).ready(function () {
     const emailInput = $("input#email");
     const passwordInput = $("input#password");
 
-
-
+    
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
         console.log("Sign up Button clicked");
