@@ -15,33 +15,26 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
+        len: [4],
       },
     },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
     github: DataTypes.STRING,
     linkedIn: DataTypes.STRING,
     bootcamp: DataTypes.STRING,
     gradDate: DataTypes.STRING,
-    location: DataTypes.STRING,
+    location: DataTypes.STRING
   });
 
   User.prototype.validPassword = (password) => {
+    console.log("bcrypt compareSuync")
     return bcrypt.compareSync(password, this.password);
   };
 

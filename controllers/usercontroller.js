@@ -6,6 +6,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const passport = require("passport");
 
 // Routes
 // =============================================================
@@ -18,46 +19,45 @@ const db = require("../models");
 
 
 
-//     // console.log("try  ", db.Validation.isEmail(email))
 
-//     db.User.findAll({}).then(function (dbUser) {
-//         // res.render(dbUser)
+// Passport
 
-//         // console.log("This is the email: ", dbUser);
-//         // res.redirect(307, "/profile");
-//     })
-//         .catch(function (err) {
-//             console.log(err)
-//         res.status(401).json(err);
-//     });
-
-
-// });
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
 // create a new user 
 router.post("/api/signup", function (req, res) {
-    console.log("router.post api sign up",req.body)
+    console.log(req.body)
 
     db.User.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
         email: req.body.email,
         password: req.body.password,
-        github: req.body.github,
-        linkedIn: req.body.linkedIn,
-        bootcamp: req.body.bootcamp,
-        gradDate: req.body.gradDate,
-        location: req.body.location,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
+        // github: req.body.github,
+        // linkedIn: req.body.linkedIn,
+        // bootcamp: req.body.bootcamp,
+        // gradDate: req.body.gradDate,
+        // location: req.body.location
     })
-        .then(dbNewUser => {
-            res.json(dbNewUser)
-            res.redirect(307, "/api/profile")
-        })
+    .then(dbNewUser => {
+        console.log("dbNewUser", dbNewUser);
+        res.json(dbNewUser);
+        res.redirect(307, "/api/login");
+    })
+    // .then(function() {
+    //     res.redirect(307, "/api/login");
+    // })
+        // .then(newUser => {
+        //     console.log(" promise for dbUsercreate")
+        //     res.json(newUser)
+        //     res.redirect(307, "/api/login")
+        // })
         // {
         // res.json(req.body)
         // res.redirect(307, "/profile");
         // })
         .catch(function (err) {
+            console.log("Error creating User")
             res.status(401).json(err);
         });
 });
