@@ -31,13 +31,8 @@ router.get("/profile/:id", function (req, res) {
 
 });
 
-<<<<<<< HEAD
-router.get("/dashboard", function (req, res) {
-  res.render("dashboard")
-=======
 router.get("/post", function(req, res) {
   res.render("post");
->>>>>>> 1f523e4e3df3cab4bec10ea5b6f6f04f69a8d79a
 })
 router.get("/dashboard", function (req, res){
   res.render("dashboard");

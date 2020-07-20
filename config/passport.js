@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
-
-var db = require("../models");
-=======
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const db = require("../models");
->>>>>>> 1f523e4e3df3cab4bec10ea5b6f6f04f69a8d79a
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
@@ -17,10 +10,6 @@ passport.use(new LocalStrategy(
     usernameField: "email"
   },
   function(email, password, done) {
-<<<<<<< HEAD
-=======
-      console.log("findOne in passport.js")
->>>>>>> 1f523e4e3df3cab4bec10ea5b6f6f04f69a8d79a
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {

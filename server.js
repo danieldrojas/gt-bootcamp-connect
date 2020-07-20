@@ -2,12 +2,12 @@ const express = require("express");
 const session = require("express-session")
 const exphbs = require("express-handlebars");
 const path = require("path");
-const passport = require("./config/passport")
+// const passport = require("./config/passport")
 //Define variables
 const PORT = process.env.PORT || 8080;
 const app = express();
 const passport = require("passport");
-const path = require("path");
+// const path = require("path");
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
 const APIController = require("./controllers/apiController")
