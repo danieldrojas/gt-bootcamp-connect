@@ -30,7 +30,7 @@ $(document).ready(function () {
       createPost(postData.titleInput, postData.textInput);
       console.log(" createUser function called")
       titleInput.val("");
-      titleInput.val("");
+      textInput.val("");
     });
   
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
