@@ -45,8 +45,8 @@ app.use(LoginController);
  */
 db.sequelize
     // .sync({force: true})
-    .sync()
-    // .sync({force: true})
+    // .sync()
+    .sync({force: true})
     .then(() => {
         app.listen(PORT, function () {
             // Log (server-side) when our server has started

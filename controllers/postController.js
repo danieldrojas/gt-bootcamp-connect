@@ -15,9 +15,14 @@ const db = require("../models");
 // Getting all post 
 router.get("/dashboard", (req, res) => {
     console.log('WE HIT DASHBOARD ROUTE!!!');
-    console.log(res.body);
+    // console.log(res.body);
 
     db.Post.findAll({}).then(function (dbPosts) {
+
+
+        db.User.findAll({}).then(users => {
+        //   console.log("this is the user info", users[0].dataValues)
+     
       
         
         const post = {
@@ -26,17 +31,20 @@ router.get("/dashboard", (req, res) => {
         }
 
         for (let i = 0; i < dbPosts.length; i++) {
-            console.log('this is each post!!', dbPosts[i].dataValues)
-            post.posts.push(dbPosts[i].dataValues)
-        }
-            
-    
-            
+            console.log('this is each post!!', dbPosts[i].dataValues.UserId)
+            // if (users[i].dataValues.id === dbPosts[i].dataValues.UserId) {
+                post.posts.push(dbPosts[i].dataValues)
+        // }
+            } 
+        
+            res.render("dashboard", post)
 
-        console.log('POSTS FROM DB!!! about to send dashboard handlbars', post)
+
+        }) 
+
+        // console.log('POSTS FROM DB!!! about to send dashboard handlbars', post)
 
 
-        res.render("dashboard", post)
         
     });
 });
