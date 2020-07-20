@@ -15,17 +15,10 @@ const db = require("../models");
 // Getting all post 
 router.get("/dashboard", (req, res) => {
     console.log('WE HIT DASHBOARD ROUTE!!!');
-
     console.log(res.body);
 
     db.Post.findAll({}).then(function (dbPosts) {
-
-        // db.User.findAll({
-
-        //     where: {
-        //              id: dbPosts.id
-        //     }
-        // })
+      
         
         const post = {
             posts: [],
@@ -37,13 +30,24 @@ router.get("/dashboard", (req, res) => {
             post.posts.push(dbPosts[i].dataValues)
         }
             
-            post.posts = post.posts.map(item => item.userName = "Daniel");
+    
             
 
         console.log('POSTS FROM DB!!! about to send dashboard handlbars', post)
 
 
-        res.render("dashboard",post)
+        res.render("dashboard", post)
+        
+    });
+});
+
+//Getting all post 
+router.post("/api/dashboard", (req, res) => {
+
+    console.log(res.body)
+
+    db.Post.findAll({}).then(function (dbPosts) {
+        res.json(dbPosts)
 
 
     })
@@ -64,7 +68,6 @@ router.post("/api/posts", function (req, res) {
         body: req.body.body,
     })
         .then(dbNewMessage => {
-
             res.json(dbNewMessage)
         })
 

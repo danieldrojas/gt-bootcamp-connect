@@ -16,5 +16,18 @@ router.get("/profile", function (req, res) {
 // router.get("/dashboard", function(req,res){ // if turn on i will overwrite my api
 //   res.render("dashboard")
 // })
+router.get("/post", function(req, res) {
+  res.render("post");
+})
+// router.get("/dashboard", function (req, res){
+//   res.render("dashboard");
+// })
+
+
 
 module.exports = router;
+// another route for the dashboaerd 
+// handlebars for dashboard 
+// logic needed for dashbaord route to HB file
+
+

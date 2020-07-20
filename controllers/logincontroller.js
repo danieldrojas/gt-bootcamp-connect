@@ -42,5 +42,36 @@ router.post("/", (req, res) => {
 });
 
 
+// router.get("/member_data", function (req, res) {
+
+//     db.User.findOne({
+//         where: {
+//             email: req.body.email,
+//             password: req.body.password
+//         }
+//     }).then(function (dbMember) {
+
+//         if (dbMember) {
+//         return    res.json({
+//                 email: dbMember.email,
+//                 id: dbMember.id
+                
+//             });
+            
+//         }
+//         return res.json({
+//             message: "Invalid password or email!!"
+//         });
+
+
+//         // console.log("This is the email abstract from obj: ", dbMember);
+//     })
+//         .catch(function (err) {
+//             console.log(err)
+//             res.status(401).json(err);
+//         });
+    
+// });  
+
 
 module.exports = router;
