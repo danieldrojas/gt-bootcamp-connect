@@ -1,6 +1,3 @@
-// Add on click and on submit event listeners for each handlebars page. 
-// This should make an api call (AJAX) with the corresponding routes
-
 $(document).ready(function () {
     // Getting references to our form and inputs
     const loginForm = $("#loginForm");

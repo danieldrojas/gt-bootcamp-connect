@@ -13,7 +13,7 @@ router.get("/profile", function (req, res) {
   res.render("profile");
 });
 
-// router.get("/dashboard", function(req,res){
+// router.get("/dashboard", function(req,res){ // if turn on i will overwrite my api
 //   res.render("dashboard")
 // })
 
