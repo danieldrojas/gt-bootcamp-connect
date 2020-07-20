@@ -11,17 +11,15 @@ router.get("/signup", function (req, res) {
 })
 
 router.get("/profile/:id", function (req, res) {
-  console.log("in profile views controller");
+  console.log("in the profile views controller file");
   console.log(req.params);
   db.User.findOne({
     where: {
       id: req.params.id
     }
-
   })
     .then(function (userResponse) {
       console.log(userResponse)
-
       var hbsObject = {
         profileUser: userResponse.dataValues
       };
@@ -29,7 +27,6 @@ router.get("/profile/:id", function (req, res) {
       res.render("profile", hbsObject);
 
     })
-
 
 
 });

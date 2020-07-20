@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //handlebars setup
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// added console log to handlebars  
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
     log: function(something) {
