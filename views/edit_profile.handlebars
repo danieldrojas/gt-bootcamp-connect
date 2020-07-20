@@ -1,0 +1,52 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" class="brand-logo">BootCampConnect</a>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <h4>Edit Your Profile</h4>
+        <div class="postContainer">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="row">
+                            <form class="col s12 profileEdit">
+                                <div class="row">
+                                    <div class="input-field col s8 offset-s1">
+                                        <input id="locationEdit" type="text" value="{{this.location}}">
+                                        <label for="locationEdit">Location</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s8 offset-s1">
+                                        <input id="githubEdit" type="text" value="{{this.github}}">
+                                        <label for="githubEdit">Github</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s8 offset-s1">
+                                        <input id="linkedinEdit" type="text" value="{{this.linkedin}}">
+                                        <label for="linkedinEdit">LinkedIn</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s8 offset-s1">
+                                        <textarea id="bioEdit" class="materialize-textarea" value="{{this.bio}}"></textarea>
+                                        <label for="bioEdit">Update your bio</label>
+                                    </div>
+                                </div>
+                                <button class="btn waves-effect waves-light right" id="updateProfileBtn"
+                                    type="submit">Update Profile
+                                    <i class="material-icons right">send</i>
+                                </button>
+                                {{!-- <p>Don't have an account? <a href="#">Sign up here!</a></p> --}}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

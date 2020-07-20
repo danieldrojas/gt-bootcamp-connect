@@ -6,10 +6,10 @@ $(document).ready(function () {
     const emailInput = $("input#email");
     const passwordInput = $("input#password");
 
-
-
+    
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
+        console.log("Sign up Button clicked");
         event.preventDefault();
         var userData = {
             firstName: firstNameInput.val().trim(),
@@ -31,16 +31,22 @@ $(document).ready(function () {
     });
 });
 // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+<<<<<<< HEAD
 function signUpUser(firstName, lastName, email, password) {
+=======
+function signUpUser(firstName, lastName ,email, password) {
+    console.log("Ajax Post hit")
+>>>>>>> 1f523e4e3df3cab4bec10ea5b6f6f04f69a8d79a
     $.post("/api/signup", {
-        firstName: firstName,
-        lastName: lastName,
         email: email,
-        password: password
+        password: password,
+        firstName: firstName,
+        lastName: lastName
+
     })
         .then(function (newUser) {
-            console.log(newUser)
-            window.location.replace("/profile");
+            console.log("newUser", newUser)
+            window.location.replace("/dashboard");
             // If there's an error, log the error
         })
         .catch(function (err) {

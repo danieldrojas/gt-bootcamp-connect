@@ -1,5 +1,8 @@
 const express = require("express");
+const session = require("express-session")
 const exphbs = require("express-handlebars");
+const path = require("path");
+const passport = require("./config/passport")
 //Define variables
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -36,6 +39,19 @@ app.set("view engine", "handlebars");
 // Serve static content for the app from the "public" directory in the application directory.
 app.use('/public/', express.static(path.join(__dirname, 'public')))
 // app.use(express.static("public"));
+// passport
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+// VIEW ROUTES
+ 
+
+
+ // API ROUTES
+ 
+// Serve static content for the app from the "public" directory in the application directory.
+// app.use("/public", express.static(path.resolve(__dirname, 'public')));
+app.use(express.static("public"));
 //routes
 app.use(ViewsController);
 app.use(UserController);
@@ -47,9 +63,8 @@ app.use(LoginController);
  * APP LISTEN
  */
 db.sequelize
-    // .sync({force: true})
     .sync()
-
+    // .sync({force: true})
     .then(() => {
         app.listen(PORT, function () {
             // Log (server-side) when our server has started

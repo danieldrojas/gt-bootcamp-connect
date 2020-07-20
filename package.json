@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/danieldrojas/gt-bootcamp-connect-#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
