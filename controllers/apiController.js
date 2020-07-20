@@ -41,6 +41,7 @@ router.post("/api/signup", function (req, res) {
         password: req.body.password,
     })
         .then(function () {
+            console.log("Im here")
             // res.json(req.body)
             res.redirect(307, "/profile");
         })

@@ -34,8 +34,11 @@
                     <div class="col s4 left-align">
                         <div class="card-content">
                             <ul id="userInfo">
-                                <li id="location">Location: </li>
-                                <li id="email">Email: </li>
+                                {{log profileUser}}
+                                {{log "I'm here"}}
+
+                                <li id="location">Location:  </li>
+                                <li id="email">Email: {{profileUser.email}}</li>
                                 <li id="github">GitHub: </li>
                                 <li id="linkedIn">LinkedIn: </li>
                                 <li></li>

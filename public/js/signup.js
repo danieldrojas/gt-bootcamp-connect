@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 });
 // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-function signUpUser(firstName, lastName ,email, password) {
+function signUpUser(firstName, lastName, email, password) {
     $.post("/api/signup", {
         firstName: firstName,
         lastName: lastName,
@@ -39,6 +39,7 @@ function signUpUser(firstName, lastName ,email, password) {
         password: password
     })
         .then(function (newUser) {
+            console.log(newUser)
             window.location.replace("/profile");
             // If there's an error, log the error
         })

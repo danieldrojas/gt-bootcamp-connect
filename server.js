@@ -20,8 +20,15 @@ const LoginController = require("./controllers/logincontroller")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //handlebars setup
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+    log: function(something) {
+      console.log(something);
+    }
+   }));
 app.set("view engine", "handlebars");
+
 /**VIEW ROUTES
  * API ROUTES
  */

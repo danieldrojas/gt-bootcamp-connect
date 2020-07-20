@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
         if (dbMember !== null) {
             console.log("found me!!!!!!!!!!!!!!!!!!!!!")
             res.redirect("/dashboard");  
-            // res.render(dbMember)
+            res.render(dbMember)
             return;
         } 
         return console.log('didnt find me', dbMember)  

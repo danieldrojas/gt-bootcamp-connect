@@ -50,9 +50,11 @@ router.post("/api/signup", function (req, res) {
         location: req.body.location,
     })
         .then(dbNewUser => {
-            res.json(dbNewUser)
-            res.redirect(307, "/api/profile")
+            console.log("in user controller")
+          console.log(dbNewUser.dataValues);
+            res.redirect(307, "/profile" + dbNewUser.dataValues.id)
         })
+
         // {
         // res.json(req.body)
         // res.redirect(307, "/profile");
