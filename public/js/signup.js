@@ -35,14 +35,15 @@ $(document).ready(function () {
 function signUpUser(firstName, lastName ,email, password) {
     console.log("Ajax Post hit")
     $.post("/api/signup", {
-        firstName: firstName,
-        lastName: lastName,
         email: email,
-        password: password
+        password: password,
+        firstName: firstName,
+        lastName: lastName
+
     })
         .then(function (newUser) {
             console.log("newUser", newUser)
-            window.location.replace("/profile");
+            window.location.replace("/dashbaord");
             // If there's an error, log the error
         })
         .catch(function (err) {
