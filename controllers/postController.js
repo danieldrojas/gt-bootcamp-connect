@@ -75,7 +75,7 @@ router.delete("/api/dashboard/:id", (req, res) => {
     res.json(post);
   });
 });
-
+// NEW PUT PATH FOR EDITING PROFILE
 router.put("/api/edit_profile", (req, res) => {
   console.log(req.body);
   db.Post.update(
