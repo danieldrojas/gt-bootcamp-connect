@@ -4,13 +4,18 @@
         <div class="container">
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+
                 <li><a id="dashboardLink" href="./dashboard.handlebars">Back to Dashboard</a></li>
+
+
             </ul>
         </div>
     </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="/profile" id="dashboardLink">Back to Dashboard</a></li>
+
+    <li><a href="/profile" id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+
 </ul>
 
 <div class="container">
@@ -45,7 +50,7 @@
                                 <li id="bio">Bio:</li>
                                 <p id="bioSpace">Here is where the bio information will go!</p>
                             </ul>
-                            <button class="waves-effect waves-light btn"><a id="editProfileBtn" data-value="{{profileUser.id}}" href="./edit_profile" class="noBlue">Edit Profile</a></button>
+                            <button class="waves-effect waves-light btn noBlue updateProfileBtn" id="editProfileBtn">Edit Profile</button>
                         </div>
                     </div>
                 </div>
@@ -53,3 +58,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    const editProfileBtn = $("#editProfileBtn")
+    currentUser=parseInt(sessionStorage.getItem("currentUser"))
+    let pathArr = window.location.pathname.split("/")
+    profileId = parseInt(pathArr[pathArr.length-1])
+    console.log(currentUser)
+    console.log(profileId)
+    if(!profileId===currentUser){
+        editProfileBtn.style.display = "none"
+    }
+</script>

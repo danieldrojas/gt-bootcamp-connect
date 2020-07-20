@@ -4,7 +4,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a id="dashboardLink" href="./profile">Profile</a></li>
+                <li><a id="dashboardLink">Profile</a></li>
             </ul>
         </div>
     </div>
@@ -50,4 +50,9 @@
     {{/each }}
 </div>
 
-<script src="/js/dashboard.js" type="text/javascript"></script> 
+<script src="/js/dashboard.js" type="text/javascript"></script>
+<script>
+    $("#dashboardLink").on("click", () =>{
+        window.location.replace("/profile/"+sessionStorage.getItem("currentUser"))
+    })
+</script>

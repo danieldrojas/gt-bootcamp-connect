@@ -10,6 +10,7 @@ router.get("/signup", function (req, res) {
   res.render("signup")
 })
 
+// Navigate to profile of specific person
 router.get("/profile/:id", function (req, res) {
   console.log("in the profile views controller file");
   console.log(req.params);
@@ -37,11 +38,15 @@ router.get("/profile/:id", function (req, res) {
 router.get("/post", function(req, res) {
   res.render("post");
 })
-// router.get("/dashboard", function (req, res){
-//   res.render("dashboard");
-// })
+router.get("/dashboard", function (req, res){
+  res.render("dashboard");
+})
 router.get("/edit_profile/:id", function (req, res){
-
+  db.User.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
   res.render("edit_profile", );
 })
 
