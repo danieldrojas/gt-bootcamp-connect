@@ -46,14 +46,7 @@ router.get("/edit_profile/:id", function (req, res) {
       id: req.params.id,
     },
   }).then((data) => {
-    // const hbsObject = {
-    //   currentProfileData: data,
-    // };
-    // console.log(data.User + " THIS IS THE DATA FOR THE EDIT PROFILE STUFF")
-    // res.send(data);
-    // console.log(data)
-    // res.send(data)
-    res.render("edit_profile", data);
+    res.render("edit_profile", data.dataValues);
   });
 });
 
