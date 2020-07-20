@@ -1,5 +1,5 @@
 // Requirements
-
+// window.globalUserId
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -28,9 +28,11 @@ router.post("/", (req, res) => {
               error: false,
               data: {
                 email: foundUser.email,
+                id: foundUser.id
               },
               message: "User Authenticated.",
             });
+            // window.globalUserId=foundUser.id
           }
         });
     })

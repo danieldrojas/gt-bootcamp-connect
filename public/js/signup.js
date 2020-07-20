@@ -39,6 +39,7 @@ function signUpUser(firstName, lastName ,email, password) {
     })
         .then(function (newUser) {
             console.log("newUser", newUser)
+            sessionStorage.setItem("currentUser", newUser.id)
             window.location.replace("/dashboard");
             // If there's an error, log the error
         })
