@@ -76,7 +76,7 @@ router.delete("/api/dashboard/:id", (req, res) => {
   });
 });
 // NEW PUT PATH FOR EDITING PROFILE
-router.put("/api/edit_profile", (req, res) => {
+router.put("/api/edit_profile/:id", (req, res) => {
   console.log(req.body);
   db.Post.update(
     {
@@ -87,7 +87,7 @@ router.put("/api/edit_profile", (req, res) => {
     },
     {
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     }
   );
