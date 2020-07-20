@@ -37,7 +37,7 @@ app.set("view engine", "handlebars");
  * API ROUTES
  */
 // Serve static content for the app from the "public" directory in the application directory.
-app.use('/public/', express.static(path.join(__dirname, 'public')))
+// app.use('/public/', express.static(path.join(__dirname, 'public')))
 // app.use(express.static("public"));
 // passport
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
