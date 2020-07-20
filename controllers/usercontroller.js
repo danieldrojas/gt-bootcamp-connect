@@ -41,10 +41,19 @@ router.post("/api/signup", function (req, res) {
       res.redirect(307, "/api/dashboard");
 
     })
-    .catch(function (err) {
-      console.log("Error creating User");
-      res.status(401).json(err);
-    });
+        .then(dbNewUser => {
+            console.log("in user controller")
+          console.log(dbNewUser.dataValues);
+            res.redirect(307, "/profile" + dbNewUser.dataValues.id)
+        })
+
+        // {
+        // res.json(req.body)
+        // res.redirect(307, "/profile");
+        // })
+        .catch(function (err) {
+            res.status(401).json(err);
+        });
 });
 
 // update a user

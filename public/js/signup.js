@@ -31,8 +31,12 @@ $(document).ready(function () {
     });
 });
 // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+<<<<<<< HEAD
+function signUpUser(firstName, lastName, email, password) {
+=======
 function signUpUser(firstName, lastName ,email, password) {
     console.log("Ajax Post hit")
+>>>>>>> 1f523e4e3df3cab4bec10ea5b6f6f04f69a8d79a
     $.post("/api/signup", {
         email: email,
         password: password,
