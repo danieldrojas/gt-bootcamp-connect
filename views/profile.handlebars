@@ -4,13 +4,18 @@
         <div class="container">
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a id="dashboardLink" href="badges.html">Back to Dashboard</a></li>
+
+                <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+
+
             </ul>
         </div>
     </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="/profile" id="dashboardLink" href="badges.html">Back to Dashboard</a></li>
+
+    <li><a href="/profile" id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+
 </ul>
 
 <div class="container">
@@ -22,7 +27,7 @@
                         <div class="card-image">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Neckertal_20150527-6384.jpg/1200px-Neckertal_20150527-6384.jpg">
-                            <span class="card-title">User Name</span>
+                            <span class="card-title"id="userName">{{profileUser.firstName}} {{profileUser.lastName}}</span>
                         </div>
                     </div>
                     <div class="col s6">
@@ -34,14 +39,19 @@
                     <div class="col s4 left-align">
                         <div class="card-content">
                             <ul id="userInfo">
-                                <li id="location">Location: </li>
-                                <li id="email">Email: </li>
-                                <li id="github">GitHub: </li>
-                                <li id="linkedIn">LinkedIn: </li>
+                                {{log profileUser}}
+                                {{log "I'm here"}}
+
+                                <li id="location">Location: {{profileUser.location}} </li>
+                                <li id="email">Email: {{profileUser.email}}</li>
+                                <li id="github">GitHub: {{profileUser.github}} </li>
+                                <li id="linkedIn">LinkedIn: {{profileUser.linkedIn}} </li>
                                 <li></li>
                                 <li id="bio">Bio:</li>
-                                <p id="bioSpace">Here is where the bio information will go!</p>
+                                <p id="bioSpace">{{profileUser.bio}}</p>
                             </ul>
+                            <button class="waves-effect waves-light btn noBlue updateProfileBtn"
+                                id="editProfileBtn">Edit Profile</button>
                         </div>
                     </div>
                 </div>
@@ -49,3 +59,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    const editProfileBtn = $("#editProfileBtn")
+    currentUser = parseInt(sessionStorage.getItem("currentUser"))
+    let pathArr = window.location.pathname.split("/")
+    profileId = parseInt(pathArr[pathArr.length - 1])
+    console.log(currentUser)
+    console.log(profileId)
+    if (profileId === currentUser) {
+        console.log("Boolean Passed")
+        editProfileBtn.attr("style", "display: initial")
+    }
+
+    editProfileBtn.on("click", () => {
+        window.location.replace("/edit_profile/" + profileId)
+    })
+</script>

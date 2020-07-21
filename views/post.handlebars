@@ -1,0 +1,113 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">BootCampConnect</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="dashboardLink" href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{{!-- ADD HREF OR LINK HERE FOR THIS TO WORK --}}
+{{!-- <ul class="sidenav" id="mobile-demo">
+    <li><a href="/profile"id="dashboardLink" href="badges.html">Profile</a></li>
+</ul> --}}
+<div class="container">
+    {{!-- <div class="row" id="categoryRow">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost">New Post</button>
+        </div>
+    </div> --}}
+    {{!-- </br> --}}
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h4>Create New Post</h4>
+            <div class="postContainer">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="row">
+                                <form class="col s12 postForm">
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <input id="title" type="text">
+                                            <label for="title">Title</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <textarea id="post-text" class="materialize-textarea"></textarea>
+                                            <label for="post-text">Write your post here!</label>
+                                        </div>
+                                    </div>
+
+                                    {{!-- HERE IS WHERE STACK OVERFLOW WORKS
+                                    <script
+                                        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                                        rel="stylesheet">
+                                    <!-- Compiled and minified CSS -->
+                                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+                                    <!-- Compiled and minified JavaScript -->
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <ul id="dropdown" class="dropdown-content">
+                                                <li><a href="#" data-column="1">General</a></li>
+                                                <li><a href="#" data-column="3">Collaborate</a></li>
+                                                <li><a href="#" data-column="2">Jobs</a></li>
+                                            </ul>
+                                            <ul class="dds">
+                                                <li><a class="dropdown-trigger" data-target="dropdown">
+                                                        Select Category <i
+                                                            class="material-icons">arrow_drop_down</i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- STACK OVERFLOW END --}}
+                                    <div class="input-field col s12">
+                                        <select>
+                                            <option value="" disabled selected>Select a Category</option>
+                                            <option value="1">General</option>
+                                            <option value="2">Jobs</option>
+                                            <option value="3">Collaborate</option>
+                                        </select>
+                                        {{!-- <label>Select a Category</label> --}}
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn waves-effect waves-light right" id="submitNewPost"
+                                            type="submit" id="loginSubmit">Submit Post!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/js/post.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('.modal').modal();
+        $('.dropdown-trigger').dropdown();
+    });
+    $(document).ready(function () {
+        $('ul.tabs').tabs();
+    });
+</script>

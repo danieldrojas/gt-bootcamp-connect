@@ -3,6 +3,8 @@ $(document).ready(function () {
     const loginForm = $("#loginForm");
     const emailInput = $("input#email");
     const passwordInput = $("input#password");
+    
+    // $.get("/api/user")
 
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function (event) {
@@ -22,22 +24,3 @@ $(document).ready(function () {
         passwordInput.val("");
     });
 });
-// loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-function loginUser(email, password) {
-    $.post("/", {
-        email: email,
-        password: password
-    })
-        .then(function (newUser) {
-            console.log(newUser)
-            sessionStorage.setItem("currentUser", newUser.data.id)
-            window.location.replace("/dashboard");
-
-            // If there's an error, log the error
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
-
-};
-
