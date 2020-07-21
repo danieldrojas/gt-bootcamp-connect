@@ -30,15 +30,16 @@ router.get("/dashboard", (req, res) => {
       for (let i = 0; i < dbUser.length; i++) {
         console.log("this is each post!!", dbPosts[i].dataValues.UserId);
         if (dbUser[i].dataValues.id === dbPosts[i].dataValues.UserId) {
-          console.log(dbUser[i].dataValues.firstName);
-          console.log(dbUser[i].dataValues.lastName);
+          // console.log(dbUser[i].dataValues.firstName);
+          // console.log(dbUser[i].dataValues.lastName);
           dbPosts[i].dataValues.firstName = dbUser[i].dataValues.firstName;
           dbPosts[i].dataValues.lastName = dbUser[i].dataValues.lastName;
 
           post.posts.push(dbPosts[i].dataValues);
         }
       }
-      res.render("dashboard", post);
+      console.log(post.posts)
+      // res.render("dashboard", post);
     });
   });
 });

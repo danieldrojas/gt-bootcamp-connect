@@ -51,9 +51,9 @@ router.get("/profile/:id", function (req, res) {
 router.get("/post", function (req, res) {
     res.render("post");
 });
-router.get("/dashboard", function (req, res) {
-    res.render("dashboard");
-});
+// router.get("/dashboard", function (req, res) {
+//     res.render("dashboard");
+// });
 
 router.get("/edit_profile/:id", function (req, res) {
     db.User.findOne({
