@@ -7,13 +7,13 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const passport = require("passport");
 const db = require("./models");
-const ViewsController = require("./controllers/viewsController");
+const ViewsController = require("./controllers/viewController");
 const APIController = require("./controllers/apiController")
 
 // const TestController = require("./controllers/testController")
-const UserController = require("./controllers/userController");
+const UserController = require("./controllers/usersController");
 const PostController = require("./controllers/postController")
-const LoginController = require("./controllers/loginController")
+const LoginController = require("./controllers/loginsController")
 const catController = require("./controllers/catController")
 /**
  * MIDDLEWARE
