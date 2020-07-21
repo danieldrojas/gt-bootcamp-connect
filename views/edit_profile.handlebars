@@ -51,7 +51,7 @@
                                         {{!-- <label for="bioEdit">Update your bio</label> --}}
                                     </div>
                                 </div>
-                                <button class="btn waves-effect waves-light right" id="updateProfileBtn"
+                                <button class="btn waves-effect waves-light right" id="finalUpdateProfileBtn"
                                     type="submit">Update Profile
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -62,6 +62,7 @@
             </div>
         </div>
     </div>
+    <script src="/js/edit_profile.js"></script>
     <script>
         $("#profileLink").on("click", () => {
             window.location.replace("/profile/" + sessionStorage.getItem("currentUser"))
