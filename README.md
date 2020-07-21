@@ -1,4 +1,7 @@
 # BootcampConnect
+[Heroku_Deployment](https://git-bootcamp-connect.herokuapp.com/)
+
+
 
 ![login_screen](/public/Assets/login_screen.png)
 
@@ -6,10 +9,7 @@
 
 **It’s not only WHAT you know, it’s WHO you know.**  Bootcamp Connect is your one stop app to keep you connected with your cohort and help you find meaningful employment.
 
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
+This app is for Project 2 to make use of Express, Handlebars, MySql2, and Sequelize.  We incoporated Express-Sessions and Passport to add Authorization as well.
 
 ## Table of Contents (Optional)
 
@@ -25,15 +25,17 @@ If you need an example of a good README, check out [the VSCode repository](https
 
 ## ERD
 
+![bcc_erd](/public/Assets/BCC.png)
+
 ## Installation
 
 Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and Collaborate.  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
 
-Once you have done the above, get playing around to add and view posts.
+Once you have done the above, get playing around to add users and posts.
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed. 
+The landing page is Login.  If you have already signed up you can login here, if do not have an account, you need to Click Sign Up.  You must enter your First and Last name, an email address, and a password with at least 8 Characters. You will  
 
 
 ## Credits
@@ -42,7 +44,7 @@ Nick Mitchel | Steve Morris | Daniel Rojas | Chay Williams
 ------------ | ------------- | ------------ | -------------
 [Github]() | [Github]() | [Github]() | [Github]()
 
-
+@nmitchell34
 
 
 
