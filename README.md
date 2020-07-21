@@ -7,9 +7,10 @@
 
 ## Description 
 
-**It’s not only WHAT you know, it’s WHO you know.**  Bootcamp Connect is your one stop app to keep you connected with your cohort and help you find meaningful employment.
+**It’s not only WHAT you know, it’s WHO you know.**
 
-This app is for Project 2 to make use of Express, Handlebars, MySql2, and Sequelize.  We incoporated Express-Sessions and Passport to add Authorization as well.
+* BootCampConnect™ helps new Bootcamp students connect with Bootcamp alumni
+* Users can post about jobs, collaborative opportunities or general coding questions
 
 ## Table of Contents (Optional)
 
@@ -29,13 +30,17 @@ This app is for Project 2 to make use of Express, Handlebars, MySql2, and Sequel
 
 ## Installation
 
-Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and Collaborate.  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
+Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and "Collaborate".  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
 
 Once you have done the above, get playing around to add users and posts.
 
 ## Usage 
 
-The landing page is Login.  If you have already signed up you can login here, if do not have an account, you need to Click Sign Up.  You must enter your First and Last name, an email address, and a password with at least 8 Characters. You will  
+When you first visit the site, you will need to Login or Sign Up. Here you can enter your credentials, or click "Sign Up" to create an account.  If you do have to create an account you will be taken to your Profile Page to complete your profile with GitHub, LinkedIn, Location, and Biography.  You can edit it whenever you please.  If you logged in without creating an account you will be taken to the Dashboard.  Here you can sort posts by category, return to your profile, or create a new post.
+
+When you create a Post, you give it a title, the body of your post, and choose a category. It will then return you to the dashboard.
+
+**Need to do Logout**
 
 
 ## Credits
@@ -44,7 +49,6 @@ Nick Mitchel | Steve Morris | Daniel Rojas | Chay Williams
 ------------ | ------------- | ------------ | -------------
 [Github]() | [Github]() | [Github]() | [Github]()
 
-@nmitchell34
 
 
 
