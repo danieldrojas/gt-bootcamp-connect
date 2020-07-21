@@ -63,7 +63,10 @@ router.post("/api/posts", function (req, res) {
 
   db.Post.create({
     title: req.body.title,
-    body: req.body.body,
+      body: req.body.body,
+      UserId: req.body.id,
+      CategoryId: req.body.categoryId
+      
   })
     .then((dbNewMessage) => {
       res.json(dbNewMessage);
@@ -79,7 +82,8 @@ router.put("/api/dashboard", (req, res) => {
   db.Post.update(
     {
       title: req.body.title,
-      body: req.body.body,
+          body: req.body.body,
+      
     },
     {
       where: {
