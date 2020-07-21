@@ -1,0 +1,100 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">BootCampConnect</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="dashboardLink" href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{{!-- ADD HREF OR LINK HERE FOR THIS TO WORK --}}
+{{!-- <ul class="sidenav" id="mobile-demo">
+    <li><a href="/profile"id="dashboardLink" href="badges.html">Profile</a></li>
+</ul> --}}
+<div class="container">
+    {{!-- <div class="row" id="categoryRow">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost">New Post</button>
+        </div>
+    </div> --}}
+    {{!-- </br> --}}
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h4>Create New Post</h4>
+            <div class="postContainer">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="row">
+                                <form class="col s12 postForm">
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <input id="title" type="text">
+                                            <label for="title">Title</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s10 offset-s1">
+                                            <textarea id="post-text" class="materialize-textarea"></textarea>
+                                            <label for="post-text">Write your post here!</label>
+                                        </div>
+                                    </div>
+
+                                    {{!-- HERE IS WHERE STACK OVERFLOW WORKS --}}
+                                    <script
+                                        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                                        rel="stylesheet">
+                                    <!-- Compiled and minified CSS -->
+                                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+                                    <!-- Compiled and minified JavaScript -->
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+                                    <ul id="dropdown" class="dropdown-content">
+                                        <li><a href="#">EMPOWER YOUR BUSINESS!</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                    <ul class="dds">
+                                        <li><a class="dropdown-trigger" data-target="dropdown">
+                                                Dropdown <i class="material-icons">arrow_drop_down</i></a>
+                                        </li>
+                                    </ul>
+                                    {{!-- STACK OVERFLOW END --}}
+                                    
+                                    <div class="row">
+                                        <button class="btn waves-effect waves-light right" id="submitNewPost"
+                                            type="submit" id="loginSubmit">Submit Post!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/js/post.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('.modal').modal();
+        $('.dropdown-trigger').dropdown();
+    });
+
+
+</script>

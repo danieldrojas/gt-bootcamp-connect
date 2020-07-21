@@ -24,3 +24,24 @@ li {
 .brand-logo {
   margin-left: auto;
 }
+#submitNewPost{
+  margin-right: 2rem;
+}
+/* .editHover {
+  background: #E8F3FF 
+} */
+#editProfileBtn{
+  margin: 1rem;
+  display: none;
+}
+.noBlue{
+  color:white;
+}
+#updateProfileBtn{
+  margin: 1rem;
+}
+
+.dropdown-content{
+  width: max-content !important;
+  height:auto !important;
+}
