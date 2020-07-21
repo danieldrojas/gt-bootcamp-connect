@@ -30,6 +30,22 @@
                             <span class="card-title" id="userName">{{firstName}}
                                 {{lastName}}</span>
                         </div>
+                    <div class="row">
+                        <div class="left-align">
+                            <div class="card-content">
+                                <ul id="userInfo">
+                                    <li id="location">Location: {{location}} </li>
+                                    <li id="email">Email: {{email}}</li>
+                                    <li id="github">GitHub: {{github}} </li>
+                                    <li id="linkedIn">LinkedIn: {{linkedIn}} </li>
+                                    <li id="bio">Bio:</li>
+                                    <p id="bioSpace">{{bio}}</p>
+                                </ul>
+                                <button class="waves-effect waves-light btn noBlue updateProfileBtn"
+                                    id="editProfileBtn">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div class="col s8">
                         <h5>Recent Posts:</h5>
@@ -39,18 +55,21 @@
                                     <div class="postContainer">
                                         <div class="row">
                                             <div class="col s12">
+                                                {{#each Posts}}
                                                 <div class="card">
                                                     <div class="card-content">
+                                                        {{#with hbsObject}}
                                                         <h4>{{firstName}} {{lastName}}</h4>
+                                                        {{/with}}
                                                         <span>
-                                                            <h6>{{title}} </h6>
-                                                            <p> {{body}} </p>
-
+                                                            <h6>{{this.title}} </h6>
+                                                            <p> {{this.body}} </p>
                                                         </span>
                                                         <p class="right align-right" id="timeStamp">
-                                                            <small> Posted: {{createdAt}}</small></p>
+                                                            <small> Posted: {{this.createdAt}}</small></p>
                                                     </div>
                                                 </div>
+                                                {{/each}}
                                             </div>
                                         </div>
                                     </div>
@@ -59,23 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s4 left-align">
-                        <div class="card-content">
-                            <ul id="userInfo">
-                                <li id="location">Location: {{location}} </li>
-                                <li id="email">Email: {{email}}</li>
-                                <li id="github">GitHub: {{github}} </li>
-                                <li id="linkedIn">LinkedIn: {{linkedIn}} </li>
-                                <li></li>
-                                <li id="bio">Bio:</li>
-                                <p id="bioSpace">{{bio}}</p>
-                            </ul>
-                            <button class="waves-effect waves-light btn noBlue updateProfileBtn"
-                                id="editProfileBtn">Edit Profile</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

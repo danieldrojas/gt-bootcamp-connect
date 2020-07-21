@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-
 router.get("/", (req, res) => {
   res.render("login");
 });
@@ -15,28 +14,34 @@ router.get("/signup", function (req, res) {
 router.get("/profile/:id", function (req, res) {
   console.log("Loading Profile Page");
   // console.log(req.params);
-  db.User.findOne({
+  db.User.findAll({
     include: db.Post,
+    limit: 3,
     where: {
       id: req.params.id,
-    }
+    },
+    order: [[db.Post, "createdAt", "DESC"]],
   }).then(function (userResponse) {
-    console.log(userResponse.dataValues);
-    console.log(userResponse.dataValues.Posts[0].dataValues)
+    // console.log(userResponse[0].dataValues.Posts);
+    // console.log(userResponse[0].dataValues.id)
+    postsArr=[]
+    for (i=0;i<userResponse[0].dataValues.Posts.length;i++){
+        postsArr.push(userResponse[0].dataValues.Posts[i].dataValues)
+    }
+    // console.log(userResponse[0].dataValues.Posts[0].dataValues);
+
     var hbsObject = {
-      id: userResponse.dataValues.id,
-      firstName: userResponse.dataValues.firstName,
-      lastName: userResponse.dataValues.lastName,
-      email: userResponse.dataValues.email,
-      github: userResponse.dataValues.github,
-      linkedIn: userResponse.dataValues.linkedIn,
-      location: userResponse.dataValues.location,
-      bio: userResponse.dataValues.bio,
-      title: userResponse.dataValues.Posts[0].dataValues.title,
-      body: userResponse.dataValues.Posts[0].dataValues.body,
-      createdAt: userResponse.dataValues.Posts[0].dataValues.createdAt,
+      id: userResponse[0].dataValues.id,
+      firstName: userResponse[0].dataValues.firstName,
+      lastName: userResponse[0].dataValues.lastName,
+      email: userResponse[0].dataValues.email,
+      github: userResponse[0].dataValues.github,
+      linkedIn: userResponse[0].dataValues.linkedIn,
+      location: userResponse[0].dataValues.location,
+      bio: userResponse[0].dataValues.bio,
+      Posts: postsArr,
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
 
     res.render("profile", hbsObject);
   });
