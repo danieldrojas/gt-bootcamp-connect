@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const post = require("../models/post");
 
 router.get("/", (req, res) => {
   res.render("login");
@@ -12,20 +13,25 @@ router.get("/signup", function (req, res) {
 
 // Navigate to profile of specific person
 router.get("/profile/:id", function (req, res) {
-  console.log("in the profile views controller file");
-  console.log(req.params);
+  console.log("loading profile page");
+  // console.log(req.params);
   db.User.findOne({
     where: {
       id: req.params.id,
     },
-  }).then(function (userResponse) {
-    console.log(userResponse);
-    var hbsObject = {
-      profileUser: userResponse.dataValues,
-    };
-    console.log(hbsObject);
-    res.render("profile", hbsObject);
-  });
+    include: [post],
+  })
+    .then(function (userResponse) {
+      console.log(userResponse.dataValues);
+      var hbsObject = {
+        profileUser: userResponse.dataValues,
+      };
+      console.log(hbsObject);
+      res.render("profile", hbsObject);
+    })
+    .catch((err) => {
+      throw err;
+    });
 });
 
 // router.get("/dashboard", function(req,res){ // if turn on i will overwrite my api
@@ -38,15 +44,13 @@ router.get("/dashboard", function (req, res) {
   res.render("dashboard");
 });
 
-
-
 router.get("/edit_profile/:id", function (req, res) {
   db.User.findOne({
     where: {
       id: req.params.id,
     },
   }).then((data) => {
-    console.log(data.dataValues)
+    console.log(data.dataValues);
     res.render("edit_profile", data.dataValues);
   });
 });
