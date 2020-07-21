@@ -27,12 +27,38 @@
                         <div class="card-image">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Neckertal_20150527-6384.jpg/1200px-Neckertal_20150527-6384.jpg">
-                            <span class="card-title"id="userName">{{profileUser.firstName}} {{profileUser.lastName}}</span>
+                            <span class="card-title" id="userName">{{profileUser.firstName}}
+                                {{profileUser.lastName}}</span>
                         </div>
                     </div>
                     <div class="col s6">
                         <h5>Recent Posts:</h5>
-                        <div id="postsSpace">Handlebars -- Load Posts here</div>
+                        <div id="postsSpace">Handlebars -- Load Posts here
+                            {{#each posts}}
+                            <div class="row">
+                                <div class="col s12">
+                                    <h4>{{firstName}} {{lastName}}</h4>
+                                    <div class="postContainer">
+                                        <div class="row">
+                                            <div class="col s12 m6">
+                                                <div class="card">
+                                                    <div class="card-content">
+                                                        <span>
+                                                            <h6>{{title}} </h6>
+                                                            <p> {{body}} </p>
+
+                                                        </span>
+                                                        <p class="right align-right" id="timeStamp">
+                                                            <small> Posted: {{createdAt}}</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
                     </div>
                 </div>
                 <div class="row">
