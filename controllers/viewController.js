@@ -13,7 +13,7 @@ router.get("/signup", function (req, res) {
 // Navigate to profile of specific person
 router.get("/profile/:id", function (req, res) {
   console.log("Loading Profile Page");
-  // console.log(req.params);
+// Gets user info as well as the 3 most recent posts that they've made
   db.User.findAll({
     include: db.Post,
     limit: 4,
@@ -23,14 +23,11 @@ router.get("/profile/:id", function (req, res) {
     },
     order: [[db.Post, "createdAt", "DESC"]],
   }).then(function (userResponse) {
-    // console.log(userResponse[0].dataValues.Posts);
-    // console.log(userResponse[0].dataValues.id)
     postsArr = [];
+    console.log(userResponse[0].dataValues.Posts[0])
     for (i = 0; i < userResponse[0].dataValues.Posts.length; i++) {
       postsArr.push(userResponse[0].dataValues.Posts[i].dataValues);
     }
-    // console.log(userResponse[0].dataValues.Posts[0].dataValues);
-
     var hbsObject = {
       userInfo: {
         id: userResponse[0].dataValues.id,
@@ -44,8 +41,6 @@ router.get("/profile/:id", function (req, res) {
       },
       Posts: postsArr,
     };
-    // console.log(hbsObject);
-
     res.render("profile", hbsObject);
   });
 });
