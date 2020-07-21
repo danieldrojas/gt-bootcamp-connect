@@ -63,8 +63,8 @@ app.use(catController);
  * APP LISTEN
  */
 db.sequelize
-    .sync()
-    // .sync({force: true})
+    // .sync()
+    .sync({force: true})
 
     .then(() => {
         app.listen(PORT, function () {
