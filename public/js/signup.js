@@ -9,7 +9,6 @@ $(document).ready(function () {
     
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
-        console.log("Sign up Button clicked");
         event.preventDefault();
         var userData = {
             firstName: firstNameInput.val().trim(),
@@ -32,16 +31,15 @@ $(document).ready(function () {
 });
 // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
 function signUpUser(firstName, lastName ,email, password) {
-    console.log("Ajax Post hit")
     $.post("/api/signup", {
-        email: email,
-        password: password,
         firstName: firstName,
-        lastName: lastName
-
+        lastName: lastName,
+        email: email,
+        password: password
     })
         .then(function (newUser) {
             console.log("newUser", newUser)
+            sessionStorage.setItem("currentUser", newUser.id)
             window.location.replace("/dashboard");
             // If there's an error, log the error
         })

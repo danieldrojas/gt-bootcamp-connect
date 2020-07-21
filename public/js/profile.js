@@ -3,8 +3,8 @@ $(document).ready(function () {
     const loginForm = $("#loginForm");
     const emailInput = $("input#email");
     const passwordInput = $("input#password");
-
-
+    
+    // $.get("/api/user")
 
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function (event) {

@@ -7,46 +7,50 @@ router.get("/", (req, res) => {
 });
 
 router.get("/signup", function (req, res) {
-  res.render("signup")
-})
+  res.render("signup");
+});
 
+// Navigate to profile of specific person
 router.get("/profile/:id", function (req, res) {
   console.log("in the profile views controller file");
   console.log(req.params);
   db.User.findOne({
     where: {
-      id: req.params.id
-    }
-  })
-    .then(function (userResponse) {
-      console.log(userResponse)
-      var hbsObject = {
-        profileUser: userResponse.dataValues
-      };
-      console.log(hbsObject);
-      res.render("profile", hbsObject);
-
-    })
-
-
+      id: req.params.id,
+    },
+  }).then(function (userResponse) {
+    console.log(userResponse);
+    var hbsObject = {
+      profileUser: userResponse.dataValues,
+    };
+    console.log(hbsObject);
+    res.render("profile", hbsObject);
+  });
 });
 
-router.get("/post", function(req, res) {
+// router.get("/dashboard", function(req,res){ // if turn on i will overwrite my api
+//   res.render("dashboard")
+// })
+router.get("/post", function (req, res) {
   res.render("post");
-})
-router.get("/dashboard", function (req, res){
+});
+router.get("/dashboard", function (req, res) {
   res.render("dashboard");
-})
-router.get("/edit_profile/:id", function (req, res){
-
-  res.render("edit_profile", );
-})
+});
 
 
+
+router.get("/edit_profile/:id", function (req, res) {
+  db.User.findOne({
+    where: {
+      id: req.params.id,
+    },
+  }).then((data) => {
+    res.render("edit_profile", data.dataValues);
+  });
+});
 
 module.exports = router;
 // another route for the dashboaerd
-// handlebars for dashboard 
+// handlebars for dashboard
 // logic needed for dashbaord route to HB file
-
-

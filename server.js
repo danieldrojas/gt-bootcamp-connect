@@ -2,12 +2,10 @@ const express = require("express");
 const session = require("express-session")
 const exphbs = require("express-handlebars");
 const path = require("path");
-// const passport = require("./config/passport")
 //Define variables
 const PORT = process.env.PORT || 8080;
 const app = express();
 const passport = require("passport");
-// const path = require("path");
 const db = require("./models");
 const ViewsController = require("./controllers/viewscontroller");
 const APIController = require("./controllers/apiController")
@@ -16,6 +14,7 @@ const APIController = require("./controllers/apiController")
 const UserController = require("./controllers/usercontroller");
 const PostController = require("./controllers/postcontroller")
 const LoginController = require("./controllers/logincontroller")
+const catController = require("./controllers/catController")
 /**
  * MIDDLEWARE
  */
@@ -57,14 +56,15 @@ app.use(ViewsController);
 app.use(UserController);
 app.use(PostController);
 app.use(LoginController);
+app.use(catController);
 // app.use("/api/test/", TestController) //run all traffic that has "/api/test/" into TestController
 /**
  * gets wrapped up in DB Connection
  * APP LISTEN
  */
 db.sequelize
-    // .sync({force: true})
     .sync()
+    // .sync({force: true})
 
     .then(() => {
         app.listen(PORT, function () {

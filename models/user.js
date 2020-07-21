@@ -30,7 +30,8 @@ module.exports = function (sequelize, DataTypes) {
     linkedIn: DataTypes.STRING,
     bootcamp: DataTypes.STRING,
     gradDate: DataTypes.STRING,
-    location: DataTypes.STRING
+    location: DataTypes.STRING,
+    bio: DataTypes.STRING
   });
 
   User.prototype.validPassword = (password) => {

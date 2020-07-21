@@ -28,14 +28,14 @@ $(document).ready(function () {
 
   function editProfile(location, github, linkedin, bio) {
     console.log("Ajax put hit");
-    $.put("/api/edit_profile", {
+    $.put("/api/edit_profile/:id", {
       location: location,
       github: github,
       linkedIn: linkedin,
       bio: bio,
     }).then(function(){
         console.log("Profile Updated")
-        window.location.replace("/profile")
+        window.location.replace("/profile/:id")
 
     }).catch(function(err){
         console.log(err);
