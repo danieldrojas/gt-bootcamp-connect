@@ -76,14 +76,16 @@
                                         </div>
                                     </div> --}}
                                     {{!-- STACK OVERFLOW END --}}
-                                    <div class="input-field col s12">
-                                        <select>
-                                            <option value="" disabled selected>Select a Category</option>
-                                            <option value="1">General</option>
-                                            <option value="2">Jobs</option>
-                                            <option value="3">Collaborate</option>
-                                        </select>
-                                        {{!-- <label>Select a Category</label> --}}
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <select>
+                                                <option value="" disabled selected>Select a Category</option>
+                                                <option value="1">General</option>
+                                                <option value="2">Jobs</option>
+                                                <option value="3">Collaborate</option>
+                                            </select>
+                                            {{!-- <label>Select a Category</label> --}}
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <button class="btn waves-effect waves-light right" id="submitNewPost"
@@ -100,14 +102,24 @@
 
     </div>
 </div>
-<script src="/js/post.js"></script>
+
 <script>
 
-    $(document).ready(function () {
-        $('.modal').modal();
-        $('.dropdown-trigger').dropdown();
-    });
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-    });
+  $(document).ready(function(){
+    $('select').material_select();
+  });
+
 </script>
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+
+<script src="/js/post.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->   
