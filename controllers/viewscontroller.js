@@ -46,6 +46,7 @@ router.get("/edit_profile/:id", function (req, res) {
       id: req.params.id,
     },
   }).then((data) => {
+    console.log(data.dataValues)
     res.render("edit_profile", data.dataValues);
   });
 });
