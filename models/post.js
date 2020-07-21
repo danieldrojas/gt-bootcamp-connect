@@ -1,7 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
   const Post = sequelize.define("Post", {
-    title: DataTypes.STRING,
-    body: DataTypes.TEXT,
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false},
+    body: {
+      type: DataTypes.TEXT,
+      allowNull: false}
   });
 
   Post.associate = function (models) {

@@ -1,14 +1,10 @@
-# gt-bootcamp-connect
+# BootcampConnect
+
+![login_screen](/public/Assets/login_screen.png)
 
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
-
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
-
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here.
+**It’s not only WHAT you know, it’s WHO you know.**  Bootcamp Connect is your one stop app to keep you connected with your cohort and help you find meaningful employment.
 
 If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
 
@@ -17,19 +13,23 @@ If you need an example of a good README, check out [the VSCode repository](https
 
 ## Table of Contents (Optional)
 
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
+* [ERD](#erd)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
-* []
+* [Badges](#badges)
+* [Contributing](#contributing)
+* [Tests](#tests)
 
+
+## ERD
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and Collaborate.  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
 
+Once you have done the above, get playing around to add and view posts.
 
 ## Usage 
 
