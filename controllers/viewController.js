@@ -24,21 +24,23 @@ router.get("/profile/:id", function (req, res) {
   }).then(function (userResponse) {
     // console.log(userResponse[0].dataValues.Posts);
     // console.log(userResponse[0].dataValues.id)
-    postsArr=[]
-    for (i=0;i<userResponse[0].dataValues.Posts.length;i++){
-        postsArr.push(userResponse[0].dataValues.Posts[i].dataValues)
+    postsArr = [];
+    for (i = 0; i < userResponse[0].dataValues.Posts.length; i++) {
+      postsArr.push(userResponse[0].dataValues.Posts[i].dataValues);
     }
     // console.log(userResponse[0].dataValues.Posts[0].dataValues);
 
     var hbsObject = {
-      id: userResponse[0].dataValues.id,
-      firstName: userResponse[0].dataValues.firstName,
-      lastName: userResponse[0].dataValues.lastName,
-      email: userResponse[0].dataValues.email,
-      github: userResponse[0].dataValues.github,
-      linkedIn: userResponse[0].dataValues.linkedIn,
-      location: userResponse[0].dataValues.location,
-      bio: userResponse[0].dataValues.bio,
+      userInfo: {
+        id: userResponse[0].dataValues.id,
+        firstName: userResponse[0].dataValues.firstName,
+        lastName: userResponse[0].dataValues.lastName,
+        email: userResponse[0].dataValues.email,
+        github: userResponse[0].dataValues.github,
+        linkedIn: userResponse[0].dataValues.linkedIn,
+        location: userResponse[0].dataValues.location,
+        bio: userResponse[0].dataValues.bio,
+      },
       Posts: postsArr,
     };
     // console.log(hbsObject);
