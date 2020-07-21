@@ -56,3 +56,6 @@ li {
   font-size: larger;
   margin-left: 7.5% !important
 }
+#userName{
+  font-weight: bold;
+}
