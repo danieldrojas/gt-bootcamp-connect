@@ -1,6 +1,7 @@
 /**
  *  THIS FILES HAS THE ROUTES TO CREATE A NEW USER
  */
+//We are close
 
 const express = require("express");
 const router = express.Router();
