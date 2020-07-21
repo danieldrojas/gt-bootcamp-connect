@@ -60,6 +60,7 @@ router.get("/dashboard", function (req, res) {
     include: [{ all: true, nested: true }],
     limit: 10,
     subQuery: false,
+    order: [["createdAt", "DESC"]],
     where: {
       categoryId: catId,
     },
