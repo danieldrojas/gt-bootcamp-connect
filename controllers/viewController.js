@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const post = require("../models/post")
 
 router.get("/", (req, res) => {
   res.render("login");
@@ -15,12 +16,12 @@ router.get("/profile/:id", function (req, res) {
   console.log("Loading Profile Page");
   // console.log(req.params);
   db.User.findOne({
+    // include: [post],
     where: {
       id: req.params.id,
-    },
-    include: [post],
+    }
   }).then(function (userResponse) {
-    console.log(userResponse.dataValues);
+    // console.log(userResponse.dataValues);
     var hbsObject = {
       profileUser: userResponse.dataValues,
     };
