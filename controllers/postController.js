@@ -128,7 +128,9 @@ router.put("/api/edit_profile/", (req, res) => {
         id: req.body.id,
       },
     }
-  );
-  console.log("DB Updated");
+  ).then((dbres)=>{
+      res.json(dbres)
+      console.log("DB UPDATED")
+  });
 });
 module.exports = router;

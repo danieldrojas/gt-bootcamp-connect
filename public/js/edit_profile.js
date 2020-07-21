@@ -36,8 +36,7 @@ $(document).ready(function () {
         linkedIn: linkedin,
         bio: bio,
       },
-    }).then(function (data) {
-      res.json(data);
+    }).then(() => {
       console.log("Updated Profile");
       window.location.replace(
         "/profile/" + sessionStorage.getItem("currentUser")
