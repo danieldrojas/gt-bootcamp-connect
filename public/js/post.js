@@ -27,7 +27,7 @@ $(document).ready(function () {
       }
   
       // If we have an email and password we run the loginUser function and clear the form
-      createPost(postData.titleInput, postData.textInput);
+      createPost(postData.title, postData.text);
       console.log(" createUser function called")
       titleInput.val("");
       textInput.val("");
