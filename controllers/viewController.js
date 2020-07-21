@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const post = require("../models/post")
+
 
 router.get("/", (req, res) => {
   res.render("login");
@@ -16,16 +16,28 @@ router.get("/profile/:id", function (req, res) {
   console.log("Loading Profile Page");
   // console.log(req.params);
   db.User.findOne({
-    // include: [post],
+    include: db.Post,
     where: {
       id: req.params.id,
     }
   }).then(function (userResponse) {
-    // console.log(userResponse.dataValues);
+    console.log(userResponse.dataValues);
+    console.log(userResponse.dataValues.Posts[0].dataValues)
     var hbsObject = {
-      profileUser: userResponse.dataValues,
+      id: userResponse.dataValues.id,
+      firstName: userResponse.dataValues.firstName,
+      lastName: userResponse.dataValues.lastName,
+      email: userResponse.dataValues.email,
+      github: userResponse.dataValues.github,
+      linkedIn: userResponse.dataValues.linkedIn,
+      location: userResponse.dataValues.location,
+      bio: userResponse.dataValues.bio,
+      title: userResponse.dataValues.Posts[0].dataValues.title,
+      body: userResponse.dataValues.Posts[0].dataValues.body,
+      createdAt: userResponse.dataValues.Posts[0].dataValues.createdAt,
     };
     console.log(hbsObject);
+
     res.render("profile", hbsObject);
   });
 });
