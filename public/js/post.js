@@ -42,7 +42,7 @@ $(document).ready(function () {
       })
         .then(function () {
           console.log("line 37 index.js");
-          window.location.render("/dashboard");
+          window.location.replace("/dashboard");
           // If there's an error, log the error
         })
       //   .catch(err);
