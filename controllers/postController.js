@@ -12,36 +12,37 @@ const db = require("../models");
  */
 
 // Getting all post
-router.get("/dashboard", (req, res) => {
-  console.log("WE HIT DASHBOARD ROUTE!!!");
-  // console.log(res.body);
+// router.get("/dashboard", (req, res) => {
+//   console.log("WE HIT DASHBOARD ROUTE!!!");
+//   // console.log(res.body);
 
-  db.Post.findAll({}).then(function (dbPosts) {
-    db.User.findAll({}).then((dbUser) => {
-      console.log("this is for user!", dbUser[0].dataValues.id);
+//   db.Post.findAll({}).then(function (dbPosts) {
+//     db.User.findAll({}).then((dbUser) => {
+//       console.log("this is for user!", dbUser[0].dataValues.id);
 
-      const post = {
-        posts: [],
-      };
+//       const post = {
+//         posts: [],
+//       };
 
-      const userNames = [];
+//       const userNames = [];
 
-      //Print on dashboard the posts with an user
-      for (let i = 0; i < dbUser.length; i++) {
-        console.log("this is each post!!", dbPosts[i].dataValues.UserId);
-        if (dbUser[i].dataValues.id === dbPosts[i].dataValues.UserId) {
-          console.log(dbUser[i].dataValues.firstName);
-          console.log(dbUser[i].dataValues.lastName);
-          dbPosts[i].dataValues.firstName = dbUser[i].dataValues.firstName;
-          dbPosts[i].dataValues.lastName = dbUser[i].dataValues.lastName;
+//       //Print on dashboard the posts with an user
+//       for (let i = 0; i < dbUser.length; i++) {
+//         console.log("this is each post!!", dbPosts[i].dataValues.UserId);
+//         if (dbUser[i].dataValues.id === dbPosts[i].dataValues.UserId) {
+//           // console.log(dbUser[i].dataValues.firstName);
+//           // console.log(dbUser[i].dataValues.lastName);
+//           dbPosts[i].dataValues.firstName = dbUser[i].dataValues.firstName;
+//           dbPosts[i].dataValues.lastName = dbUser[i].dataValues.lastName;
 
-          post.posts.push(dbPosts[i].dataValues);
-        }
-      }
-      res.render("dashboard", post);
-    });
-  });
-});
+//           post.posts.push(dbPosts[i].dataValues);
+//         }
+//       }
+//       console.log(post.posts)
+//       // res.render("dashboard", post);
+//     });
+//   });
+// });
 
 // Getting all post
 router.post("/api/dashboard", (req, res) => {
