@@ -6,39 +6,41 @@ $(document).ready(function () {
   const linkedinEdit = $("#linkedinEdit");
   const bioEdit = $("#bioEdit");
 
-  $("#updateProfileBtn").on("click", function (event) {
+  $("#finalUpdateProfileBtn").on("click", function (event) {
     event.preventDefault();
     var updateData = {
+      id: sessionStorage.getItem("currentUser"),
       location: locationEdit.val().trim(),
-      github: githubEdit.val().edit(),
+      github: githubEdit.val().trim(),
       linkedIn: linkedinEdit.val().trim(),
       bio: bioEdit.val().trim(),
     };
     editProfile(
+      updateData.id,
       updateData.location,
       updateData.github,
       updateData.linkedIn,
       updateData.bio
     );
-    locationEdit.val("");
-    githubEdit.val("");
-    linkedinEdit.val("");
-    bioEdit.val("");
   });
 
-  function editProfile(location, github, linkedin, bio) {
+  function editProfile(id, location, github, linkedin, bio) {
     console.log("Ajax put hit");
-    $.put("/api/edit_profile/:id", {
-      location: location,
-      github: github,
-      linkedIn: linkedin,
-      bio: bio,
-    }).then(function(){
-        console.log("Profile Updated")
-        window.location.replace("/profile/:id")
-
-    }).catch(function(err){
-        console.log(err);
+    $.ajax({
+      url: "/api/edit_profile/",
+      method: "PUT",
+      data: {
+        id: id,
+        location: location,
+        github: github,
+        linkedIn: linkedin,
+        bio: bio,
+      },
+    }).then(() => {
+      console.log("Updated Profile");
+      window.location.replace(
+        "/profile/" + sessionStorage.getItem("currentUser")
+      );
     });
   }
 });
