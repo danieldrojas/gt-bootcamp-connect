@@ -41,13 +41,13 @@
                                     <br>
                                     <br>
                                     <div class="row">
-                                        <div class="input-field col s10 offset-s1">
+                                        <div class="input-field col s8 offset-s1">
                                             <textarea id="post-text" class="materialize-textarea"></textarea>
                                             <label for="post-text">Write your post here!</label>
                                         </div>
                                     </div>
 
-                                    {{!-- HERE IS WHERE STACK OVERFLOW WORKS --}}
+                                    {{!-- HERE IS WHERE STACK OVERFLOW WORKS
                                     <script
                                         src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -59,18 +59,35 @@
                                     <!-- Compiled and minified JavaScript -->
                                     <script
                                         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-                                    <ul id="dropdown" class="dropdown-content">
-                                        <li><a href="#">General</a></li>
-                                        <li><a href="#">Collaborate</a></li>
-                                        <li><a href="#">Jobs</a></li>
-                                    </ul>
-                                    <ul class="dds">
-                                        <li><a class="dropdown-trigger" data-target="dropdown">
-                                                Select Category <i class="material-icons">arrow_drop_down</i></a>
-                                        </li>
-                                    </ul>
-                                    {{!-- STACK OVERFLOW END --}}
 
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s1">
+                                            <ul id="dropdown" class="dropdown-content">
+                                                <li><a href="#" data-column="1">General</a></li>
+                                                <li><a href="#" data-column="3">Collaborate</a></li>
+                                                <li><a href="#" data-column="2">Jobs</a></li>
+                                            </ul>
+                                            <ul class="dds">
+                                                <li><a class="dropdown-trigger" data-target="dropdown">
+                                                        Select Category <i
+                                                            class="material-icons">arrow_drop_down</i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> --}}
+                                    {{!-- STACK OVERFLOW END --}}
+                                    <div class="row">
+                                        <div class="col s8 offset-1 catSelect">Select a Category</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s9 offset-1">
+                                            <ul class="tabs">
+                                                <li class="tab col s3"><a class="active" href="#test1">General</a></li>
+                                                <li class="tab col s3"><a class="" href="#test1">Jobs</a></li>
+                                                <li class="tab col s3"><a class="" href="#test1">Collaborate</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <button class="btn waves-effect waves-light right" id="submitNewPost"
                                             type="submit" id="loginSubmit">Submit Post!
@@ -93,6 +110,8 @@
         $('.modal').modal();
         $('.dropdown-trigger').dropdown();
     });
-
-
+    $(document).ready(function () {
+        $('ul.tabs').tabs();
+    });
+    $
 </script>
