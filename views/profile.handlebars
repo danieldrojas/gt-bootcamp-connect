@@ -27,7 +27,7 @@
                         <div class="card-image">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Neckertal_20150527-6384.jpg/1200px-Neckertal_20150527-6384.jpg">
-                            <span class="card-title">User Name</span>
+                            <span class="card-title"id="userName">{{profileUser.firstName}} {{profileUser.lastName}}</span>
                         </div>
                     </div>
                     <div class="col s6">
@@ -44,11 +44,11 @@
 
                                 <li id="location">Location:{{profileUser.location}} </li>
                                 <li id="email">Email: {{profileUser.email}}</li>
-                                <li id="github">GitHub:{{profileUser.GitHub}} </li>
-                                <li id="linkedIn">LinkedIn:{{profileUser.LinkedIn}} </li>
+                                <li id="github">GitHub:{{profileUser.github}} </li>
+                                <li id="linkedIn">LinkedIn:{{profileUser.linkedIn}} </li>
                                 <li></li>
                                 <li id="bio">Bio:</li>
-                                <p id="bioSpace">Here is where the bio information will go!</p>
+                                <p id="bioSpace">{{profileUser.bio}}</p>
                             </ul>
                             <button class="waves-effect waves-light btn noBlue updateProfileBtn"
                                 id="editProfileBtn">Edit Profile</button>

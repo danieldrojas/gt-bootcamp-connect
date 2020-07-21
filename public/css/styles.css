@@ -37,11 +37,25 @@ li {
 .noBlue{
   color:white;
 }
-#updateProfileBtn{
+#finalUpdateProfileBtn{
   margin: 1rem;
 }
 
 .dropdown-content{
   width: max-content !important;
   height:auto !important;
+}
+.dropdown-trigger{
+  background-color: #26a69a;
+  color: white;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.catSelect{
+  font-size: larger;
+  margin-left: 7.5% !important
+}
+#userName{
+  font-weight: bold;
 }
