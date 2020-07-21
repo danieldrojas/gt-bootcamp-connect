@@ -3,11 +3,11 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("login");
+    res.render("login");
 });
 
 router.get("/signup", function (req, res) {
-  res.render("signup");
+    res.render("signup");
 });
 
 // Navigate to profile of specific person
@@ -54,20 +54,20 @@ router.get("/profile/:id", function (req, res) {
 //   res.render("dashboard")
 // })
 router.get("/post", function (req, res) {
-  res.render("post");
+    res.render("post");
 });
 router.get("/dashboard", function (req, res) {
-  res.render("dashboard");
+    res.render("dashboard");
 });
 
 router.get("/edit_profile/:id", function (req, res) {
-  db.User.findOne({
-    where: {
-      id: req.params.id,
-    },
-  }).then((data) => {
-    res.render("edit_profile", data.dataValues);
-  });
+    db.User.findOne({
+        where: {
+            id: req.params.id,
+        },
+    }).then((data) => {
+        res.render("edit_profile", data.dataValues);
+    });
 });
 
 module.exports = router;
