@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+
+    "password": "NM97c13ab0!",
+
 
     "database": "bcc_db",
     "host": "127.0.0.1",
