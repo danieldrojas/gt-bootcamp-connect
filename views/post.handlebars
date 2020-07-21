@@ -76,17 +76,14 @@
                                         </div>
                                     </div> --}}
                                     {{!-- STACK OVERFLOW END --}}
-                                    <div class="row">
-                                        <div class="col s8 offset-1 catSelect">Select a Category</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col s9 offset-1">
-                                            <ul class="tabs">
-                                                <li class="tab col s3"><a class="active" href="#test1">General</a></li>
-                                                <li class="tab col s3"><a class="" href="#test1">Jobs</a></li>
-                                                <li class="tab col s3"><a class="" href="#test1">Collaborate</a></li>
-                                            </ul>
-                                        </div>
+                                    <div class="input-field col s12">
+                                        <select>
+                                            <option value="" disabled selected>Select a Category</option>
+                                            <option value="1">General</option>
+                                            <option value="2">Jobs</option>
+                                            <option value="3">Collaborate</option>
+                                        </select>
+                                        {{!-- <label>Select a Category</label> --}}
                                     </div>
                                     <div class="row">
                                         <button class="btn waves-effect waves-light right" id="submitNewPost"
@@ -113,5 +110,4 @@
     $(document).ready(function () {
         $('ul.tabs').tabs();
     });
-    $
 </script>
