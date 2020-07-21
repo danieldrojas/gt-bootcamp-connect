@@ -27,7 +27,7 @@ $(document).ready(function () {
       }
   
       // If we have an email and password we run the loginUser function and clear the form
-      createPost(postData.titleInput, postData.textInput);
+      createPost(postData.title, postData.body);
       console.log(" createUser function called")
       titleInput.val("");
       textInput.val("");
@@ -36,13 +36,13 @@ $(document).ready(function () {
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
     function createPost(title, body) {
         console.log("createPost in post.js ran")
-      $.post("/api/posts", {
+      $.post("/post", {
         title: title,
-        body: body,
+        body: body
       })
-        .then(function () {
-          console.log("line 37 index.js");
-          window.location.render("/dashboard");
+        .then(function (newPost) {
+          console.log("Line 44 post.js public");
+          window.location.replace("/dashboard");
           // If there's an error, log the error
         })
       //   .catch(err);

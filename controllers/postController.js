@@ -67,7 +67,7 @@ router.post("/api/dashboard", (req, res) => {
 });
 
 // create a new post
-router.post("/api/posts", function (req, res) {
+router.post("/post", function (req, res) {
     console.log(req.body);
 
     db.Post.create({

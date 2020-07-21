@@ -6,7 +6,6 @@ module.exports = function (sequelize, DataTypes) {
 
   Post.associate = function (models) {
     Post.belongsTo(models.User, {
-      allowNull: false,
       foreignKey: {
         allowNull: false,
       },
@@ -15,7 +14,6 @@ module.exports = function (sequelize, DataTypes) {
 
   Post.associate = function (models) {
     Post.belongsTo(models.Category, {
-      allowNull: false,
       foreignKey: {
         allowNull: false,
       },
