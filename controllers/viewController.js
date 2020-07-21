@@ -16,7 +16,8 @@ router.get("/profile/:id", function (req, res) {
   // console.log(req.params);
   db.User.findAll({
     include: db.Post,
-    limit: 3,
+    limit: 4,
+    subQuery: false,
     where: {
       id: req.params.id,
     },
