@@ -13,7 +13,7 @@ const APIController = require("./controllers/apiController")
 // const TestController = require("./controllers/testController")
 const UserController = require("./controllers/usersController");
 const PostController = require("./controllers/postController")
-const LoginController = require("./controllers/loginController")
+const LoginController = require("./controllers/loginsController")
 const catController = require("./controllers/catController")
 /**
  * MIDDLEWARE
