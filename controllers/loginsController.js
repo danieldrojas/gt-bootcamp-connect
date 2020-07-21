@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const bcrypt = require("bcryptjs");
+const passport = require("passport");
 
 //  Routes
 
@@ -40,6 +41,11 @@ router.post("/", (req, res) => {
       console.log(err);
       res.status(401).json(err);
     });
+});
+
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
 });
 
 
