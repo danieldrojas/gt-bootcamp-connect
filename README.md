@@ -7,6 +7,7 @@
 
 ## Description 
 
+
 **It’s not only WHAT you know, it’s WHO you know.**  
 
 * BootCampConnect™ helps new Bootcamp students connect with Bootcamp alumni
@@ -29,7 +30,7 @@
 
 ## Installation
 
-Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and Collaborate.  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
+Clone the repository and run 'npm install'.  Create your local database and change the /config/config.json file to reflect your _user name_ and _password_.  Run 'node server.js' and that will create your tables.  Next you must use Postman or similar tool to populate your 'categories' table with "category": "General" and then do the same for "Jobs" and "Collaborate".  Posts are have UserId and CategoryId for Foreign Keys so Catergories must be populated.
 
 Once you have done the above, get playing around to add users and posts.
 
@@ -39,6 +40,7 @@ The landing page is Login.  If you have already signed up you can login here, if
 
 If you already had credentials you will be taken straight to the Dashboard where you will be able to select posts by category, go to profile page, or create a post.  To create a post, enter the Title, Body, and pick a Category.
 
+
 ![profile_page](/public/Assets/profile_page.png)
 ![edit_profile](/public/Assets/edit_profile.png)
 ![dashboard](/public/Assets/dashboard.jpg)
@@ -47,7 +49,9 @@ If you already had credentials you will be taken straight to the Dashboard where
 
 Nick Mitchel | Steve Morris | Daniel Rojas | Chay Williams
 ------------ | ------------- | ------------ | -------------
+
 [Github](https://github.com/nmitchell34) | [Github](https://github.com/steveamorris) | [Github](https://github.com/danieldrojas) | [Github](https://github.com/Chayvw)
+
 
 
 
