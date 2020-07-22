@@ -38,6 +38,7 @@ router.get("/profile/:id", function (req, res) {
         linkedIn: userResponse[0].dataValues.linkedIn,
         location: userResponse[0].dataValues.location,
         bio: userResponse[0].dataValues.bio,
+        idNumbers: userResponse[0].dataValues.Posts.length
       },
       Posts: postsArr,
     };
