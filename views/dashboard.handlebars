@@ -5,7 +5,9 @@
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a id="profileLink">Profile</a></li>
-                <li><a id="logoutLink" href="/logout">Log Out</a></li>
+                <li><a href="/logout" id="logoutLink">Log Out</a></li>
+                {{!-- <li><a href="/logout" id="logoutLink">Log Out</a></li> --}}
+
             </ul>
         </div>
     </div>
@@ -19,10 +21,10 @@
 <div class="container">
     <div class="row" id="categoryRow">
         <div class="col s12">
-            <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
-            <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
-            <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
-            <button class="waves-effect waves-light btn catBtn right" id="newPost"><a href="/post" id="newPost"
+            <button class="waves-effect waves-light btn catBtn" data-value="1" id="generalBtn">General</button>
+            <button class="waves-effect waves-light btn catBtn" data-value="2" id="jobsBtn">Jobs</button>
+            <button class="waves-effect waves-light btn catBtn" data-value="3" id="collaborateBtn">Collaborate</button>
+            <button class="waves-effect waves-light btn right" id="newPost"><a href="/post" id="newPost"
                     class="noBlue">New Post</a></button>
         </div>
     </div>
@@ -59,3 +61,4 @@
         window.location.replace("/profile/" + sessionStorage.getItem("currentUser"))
     })
 </script>
+
