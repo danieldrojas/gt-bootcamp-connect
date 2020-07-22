@@ -45,7 +45,6 @@ router.get("/profile/:id", function (req, res) {
   });
 });
 
-
 // DASHBOARD
 router.get("/dashboard", function (req, res) {
   // if turn on i will overwrite my api
@@ -79,6 +78,8 @@ router.get("/dashboard", function (req, res) {
       throw err;
     });
 });
+
+
 
 router.get("/post", function (req, res) {
   res.render("post");
