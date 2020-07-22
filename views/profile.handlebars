@@ -101,7 +101,6 @@
     })
 
     $(".delBtn").on("click", function () {
-        console.log($(this).val())
         const postIdVal = $(this).val()
         $.ajax({
             url: "/api/profile/delete",
@@ -111,7 +110,7 @@
             }
         }).success(function () {
             console.log("Deleted")
-            window.location.reload(
+            window.location.reload()
         })
     })
 </script>
