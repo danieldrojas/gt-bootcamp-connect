@@ -40,7 +40,7 @@ $(document).ready(function () {
   
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
     function createPost(title, body, id, categoryId) {
-        console.log("createPost in post.js ran")
+        // console.log("createPost in post.js ran")
       $.post("/api/posts", {
         title: title,
         body: body,
