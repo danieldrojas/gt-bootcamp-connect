@@ -5,6 +5,9 @@
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a id="profileLink">Profile</a></li>
+                <li><a href="/logout" id="logoutLink">Log Out</a></li>
+                {{!-- <li><a href="/logout" id="logoutLink">Log Out</a></li> --}}
+
             </ul>
         </div>
     </div>
@@ -13,6 +16,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/profile" id="profileLink">Profile</a>
     </li>
+    <li><a href="/logout" id="logoutLink">Log Out</a></li>
 </ul>
 <div class="container">
     <div class="row" id="categoryRow">
@@ -20,11 +24,12 @@
             <button class="waves-effect waves-light btn catBtn" id="generalBtn">General</button>
             <button class="waves-effect waves-light btn catBtn" id="jobsBtn">Jobs</button>
             <button class="waves-effect waves-light btn catBtn" id="collaborateBtn">Collaborate</button>
-            <button class="waves-effect waves-light btn catBtn right" id="newPost"><a href="/post" id="newPost" class="noBlue">New Post</a></button>
+            <button class="waves-effect waves-light btn catBtn right" id="newPost"><a href="/post" id="newPost"
+                    class="noBlue">New Post</a></button>
         </div>
     </div>
     {{!-- </br> --}}
-    {{#each posts}}
+    {{#each Post}}
     <div class="row">
         <div class="col s10 offset-s1">
             <h4>{{firstName}} {{lastName}}</h4>
@@ -34,11 +39,11 @@
                         <div class="card">
                             <div class="card-content">
                                 <span>
-                                <h6>{{title}} </h6>
-                                <p> {{body}} </p>
+                                    <h6>{{title}} </h6>
+                                    <p> {{body}} </p>
 
                                 </span>
-                              <p class="right align-right" id="timeStamp">
+                                <p class="right align-right" id="timeStamp">
                                     <small> Posted: {{createdAt}}</small></p>
                             </div>
                         </div>
@@ -50,9 +55,9 @@
     {{/each }}
 </div>
 
-<script src="/js/dashboard.js" type="text/javascript"></script>
+{{!-- <script src="/js/dashboard.js" type="text/javascript"></script> --}}
 <script>
-    $("#profileLink").on("click", () =>{
-        window.location.replace("/profile/"+sessionStorage.getItem("currentUser"))
+    $("#profileLink").on("click", () => {
+        window.location.replace("/profile/" + sessionStorage.getItem("currentUser"))
     })
 </script>

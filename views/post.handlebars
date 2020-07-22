@@ -1,14 +1,20 @@
 <nav>
     <div class="nav-wrapper">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <div class="container">
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a id="dashboardLink" href="/dashboard">Dashboard</a></li>
+                <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+                <li><a href="/logout" id="logoutLink">Log Out</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<ul class="sidenav" id="mobile-demo">
+    <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+    <li><a href="/logout" id="logoutLink">Log Out</a></li>
+</ul>
+
 {{!-- ADD HREF OR LINK HERE FOR THIS TO WORK --}}
 {{!-- <ul class="sidenav" id="mobile-demo">
     <li><a href="/profile"id="dashboardLink" href="badges.html">Profile</a></li>
@@ -105,9 +111,9 @@
 
 <script>
 
-  $(document).ready(function(){
-    $('select').material_select();
-  });
+    $(document).ready(function () {
+        $('select').material_select();
+    });
 
 </script>
 
@@ -122,4 +128,4 @@
 <script src="/js/post.js"></script>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<!-- Compiled and minified JavaScript -->   
+<!-- Compiled and minified JavaScript -->

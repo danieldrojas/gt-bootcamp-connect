@@ -33,6 +33,12 @@ module.exports = function (sequelize, DataTypes) {
     location: DataTypes.STRING,
     bio: DataTypes.STRING
   });
+  
+  User.associate = function (models) {
+    User.hasMany(models.Post, {
+      onDelete: "cascade",
+    });
+  };
 
   User.prototype.validPassword = (password) => {
     console.log("bcrypt compareSuync")
@@ -47,11 +53,6 @@ module.exports = function (sequelize, DataTypes) {
     )
   });
 
-  User.associate = function (models) {
-    User.hasMany(models.Post, {
-      onDelete: "cascade",
-    });
-  };
 
   return User;
 };
