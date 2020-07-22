@@ -14,7 +14,7 @@
 * Users can post about jobs, collaborative opportunities or general coding questions
 
 
-## Table of Contents (Optional)
+## Table of Contents
 
 * [ERD](#erd)
 * [Installation](#installation)
