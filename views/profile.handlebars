@@ -56,6 +56,9 @@
                                                 {{#each Posts}}
                                                 <div class="card">
                                                     <div class="card-content">
+                                                        <button id="delete"
+                                                            class="waves-effect waves-light btn delBtn right"
+                                                            value="{{this.id}}" />delete</button>
                                                         <span>
                                                             {{!-- Cant seem to get the name in within the each block --}}
                                                             {{!-- <h5>{{userInfo.firstName}} HELLO {{userInfo.lastName}}</h5> --}}
@@ -95,5 +98,20 @@
 
     editProfileBtn.on("click", () => {
         window.location.replace("/edit_profile/" + profileId)
+    })
+
+    $(".delBtn").on("click", function () {
+        console.log($(this).val())
+        const postIdVal = $(this).val()
+        $.ajax({
+            url: "/api/profile/delete",
+            method: 'DELETE',
+            data: {
+                postId: postIdVal
+            }
+        }).success(function () {
+            console.log("Deleted")
+            window.location.reload(
+        })
     })
 </script>

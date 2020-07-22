@@ -12,18 +12,31 @@ const db = require("../models");
  */
 
 // Getting posts by general btn
-router.post("/dashboard/btn", (req, res) => {
+router.get("/dashboard/btn", (req, res) => {
   console.log("WE HIT DASHBOARD ROUTE!!!");
-  console.log("passing from front end ", req.body.CategoryId)
+  console.log("passing from front end ", req);
   db.Post.findAll({
     where: {
-      CategoryId: req.body.CategoryId
-    }
-  }).then(dbPosts => {
-    console.log("the posts im getting",dbPosts)
-    res.render("dashboard", dbPosts)
-  })
-})
+      CategoryId: req.body.CategoryId,
+    },
+  }).then((dbPosts) => {
+    console.log("the posts im getting", dbPosts);
+    res.render("dashboard", dbPosts);
+  });
+});
+router.post("/dashboard/btn", (req, res) => {
+  console.log("WE HIT DASHBOARD ROUTE!!!");
+  console.log("passing from front end ", req.body.CategoryId);
+  db.Post.findAll({
+    where: {
+      CategoryId: req.body.CategoryId,
+    },
+  }).then((dbPosts) => {
+    console.log("the posts im getting", dbPosts);
+    res.render("dashboard", dbPosts);
+  });
+});
+
 // Getting all post
 router.post("/api/dashboard", (req, res) => {
   console.log(res.body);
@@ -44,10 +57,9 @@ router.post("/api/posts", function (req, res) {
 
   db.Post.create({
     title: req.body.title,
-      body: req.body.body,
-      UserId: req.body.id,
-      CategoryId: req.body.categoryId
-      
+    body: req.body.body,
+    UserId: req.body.id,
+    CategoryId: req.body.categoryId,
   })
     .then((dbNewMessage) => {
       res.json(dbNewMessage);
@@ -63,8 +75,7 @@ router.put("/api/dashboard", (req, res) => {
   db.Post.update(
     {
       title: req.body.title,
-          body: req.body.body,
-      
+      body: req.body.body,
     },
     {
       where: {
@@ -95,12 +106,12 @@ router.delete("/api/dashboard/:id", (req, res) => {
 
 // NEW PUT PATH FOR EDITING PROFILE
 router.put("/api/edit_profile/", (req, res) => {
-//   console.log(sessionStorage.getItem("currentUser"));
+  //   console.log(sessionStorage.getItem("currentUser"));
   console.log(req.body.location);
   console.log(req.body.github);
   console.log(req.body.linkedIn);
   console.log(req.body.bio);
-  console.log(req.body.id)
+  console.log(req.body.id);
   db.User.update(
     {
       location: req.body.location,
@@ -113,14 +124,25 @@ router.put("/api/edit_profile/", (req, res) => {
         id: req.body.id,
       },
     }
-  ).then((dbres)=>{
-      res.json(dbres)
-      console.log("DB UPDATED")
+  ).then((dbres) => {
+    res.json(dbres);
+    console.log("DB UPDATED");
   });
 });
 module.exports = router;
 
-router.post("/dashboard",function(req,res){
+router.post("/dashboard", function (req, res) {
   categoryId = req.body.categoryId;
-  res.end()
-})
+  res.end();
+});
+
+router.delete("/api/profile/delete", function (req, res) {
+  console.log(req.body.postId);
+  db.Post.destroy({
+    where: {
+      id: req.body.postId,
+    },
+  }).then(function (data) {
+    res.json(data);
+  });
+});
