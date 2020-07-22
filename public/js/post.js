@@ -50,7 +50,7 @@ $(document).ready(function () {
       })
         .then(function () {
           console.log("line 37 index.js");
-          window.location.replace("/dashboard");
+          window.location.replace("/dashboard/1");
           // If there's an error, log the error
         })
       //   .catch(err);

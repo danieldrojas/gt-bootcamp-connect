@@ -47,15 +47,12 @@ router.get("/profile/:id", function (req, res) {
 
 
 // DASHBOARD
-router.get("/dashboard", function (req, res) {
+router.get("/dashboard/:categoryId", function (req, res) {
   // if turn on i will overwrite my api
   console.log("Loading dashboard page");
-  let catId;
-  if (!req.body.categoryId) {
-    catId = 1;
-  } else {
-    catId = req.body.categoryId;
-  }
+  console.log(req.params.categoryId)
+  let catId=req.params.categoryId
+ 
   db.Post.findAll({
     include: [{ all: true, nested: true }],
     // include: db.User,
@@ -72,10 +69,10 @@ router.get("/dashboard", function (req, res) {
       for (i = 0; i < userResponse.length; i++) {
           hbsArr.push(userResponse[i].dataValues)
       }
-    //   console.log(userResponse)
-    //   console.log(userResponse.length)
-      console.log(hbsArr);
-      res.render("dashboard", {Post: hbsArr});
+
+      // console.log(hbsArr);
+      res.render("dashboard", {Post : hbsArr});
+
     })
     .catch((err) => {
       throw err;
