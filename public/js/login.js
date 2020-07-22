@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    sessionStorage.clear();
     // Getting references to our form and inputs
     const loginForm = $("#loginForm");
     const emailInput = $("input#email");
@@ -31,7 +32,7 @@ function loginUser(email, password) {
         .then(function (newUser) {
             console.log(newUser)
             sessionStorage.setItem("currentUser", newUser.data.id)
-            window.location.replace("/dashboard");
+            window.location.replace("/dashboard/1");
 
             // If there's an error, log the error
         })

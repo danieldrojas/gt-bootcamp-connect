@@ -4,14 +4,14 @@
         <div class="container">
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+                <li><a id="dashboardLink" href="/dashboard/1">Back to Dashboard</a></li>
                 <li><a href="/logout" id="logoutLink">Log Out</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
-    <li><a id="dashboardLink" href="/dashboard">Back to Dashboard</a></li>
+    <li><a id="dashboardLink" href="/dashboard/1">Back to Dashboard</a></li>
     <li><a id="logoutLink">Log Out</a></li>
 </ul>
 
@@ -56,6 +56,7 @@
                                                 {{#each Posts}}
                                                 <div class="card">
                                                     <div class="card-content">
+                                                        <button id="delete" value="{{this.id}}" style="margin-left: 400px"/>delete</button>
                                                         <span>
                                                             {{!-- Cant seem to get the name in within the each block --}}
                                                             {{!-- <h5>{{userInfo.firstName}} HELLO {{userInfo.lastName}}</h5> --}}

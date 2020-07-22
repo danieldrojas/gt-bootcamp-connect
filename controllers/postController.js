@@ -132,3 +132,8 @@ router.put("/api/edit_profile/", (req, res) => {
   });
 });
 module.exports = router;
+
+router.post("/dashboard",function(req,res){
+  categoryId = req.body.categoryId;
+  res.end()
+})
