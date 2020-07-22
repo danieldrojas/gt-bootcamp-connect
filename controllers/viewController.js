@@ -54,6 +54,8 @@ router.get("/dashboard", function (req, res) {
   if (!req.body.categoryId) {
     catId = 1;
   } else {
+
+    console.log("inside the else statement", req.body.categoryId)
     catId = req.body.categoryId;
   }
   db.Post.findAll({

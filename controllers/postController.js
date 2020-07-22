@@ -12,9 +12,9 @@ const db = require("../models");
  */
 
 // Getting posts by general btn
-router.post("/dashboard/btn", (req, res) => {
+router.get("/dashboard/btn", (req, res) => {
   console.log("WE HIT DASHBOARD ROUTE!!!");
-  console.log("passing from front end ", req.body.CategoryId)
+  console.log("passing from front end ", req)
   db.Post.findAll({
     where: {
       CategoryId: req.body.CategoryId
@@ -24,6 +24,19 @@ router.post("/dashboard/btn", (req, res) => {
     res.render("dashboard", dbPosts)
   })
 })
+router.post("/dashboard/btn", (req, res) => {
+  console.log("WE HIT DASHBOARD ROUTE!!!");
+  console.log("passing from front end ", req.body.CategoryId)
+  db.Post.findAll({
+    where: {
+      CategoryId: req.body.CategoryId
+    }
+  }).then(dbPosts => {
+    console.log("the posts im getting", dbPosts)
+    res.render("dashboard", dbPosts)
+  })
+})
+
 // Getting all post
 router.post("/api/dashboard", (req, res) => {
   console.log(res.body);
