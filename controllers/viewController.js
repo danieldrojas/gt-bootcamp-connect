@@ -55,6 +55,7 @@ router.get("/dashboard/:categoryId", function (req, res) {
  
   db.Post.findAll({
     include: [{ all: true, nested: true }],
+    // include: db.User,
     limit: 10,
     subQuery: false,
     order: [["createdAt", "DESC"]],
@@ -63,12 +64,15 @@ router.get("/dashboard/:categoryId", function (req, res) {
     },
   })
     .then(function (userResponse) {
+      console.log(userResponse);
       let hbsArr = [];
       for (i = 0; i < userResponse.length; i++) {
           hbsArr.push(userResponse[i].dataValues)
       }
+
       // console.log(hbsArr);
       res.render("dashboard", {Post : hbsArr});
+
     })
     .catch((err) => {
       throw err;

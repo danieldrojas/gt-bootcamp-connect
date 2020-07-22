@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    sessionStorage.clear();
     // Getting references to our form and inputs
     const loginForm = $("#loginForm");
     const emailInput = $("input#email");

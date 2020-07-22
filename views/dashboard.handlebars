@@ -5,7 +5,9 @@
             <a href="#" class="brand-logo">BootCampConnect</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a id="profileLink">Profile</a></li>
-                <li><a id="logoutLink" href="/logout">Log Out</a></li>
+                <li><a href="/logout" id="logoutLink">Log Out</a></li>
+                {{!-- <li><a href="/logout" id="logoutLink">Log Out</a></li> --}}
+
             </ul>
         </div>
     </div>
@@ -54,3 +56,9 @@
 </div>
 
 <script src="/js/dashboard.js" type="text/javascript"></script>
+<script>
+    $("#profileLink").on("click", () => {
+        window.location.replace("/profile/" + sessionStorage.getItem("currentUser"))
+    })
+</script>
+
