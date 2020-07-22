@@ -3,13 +3,15 @@
 
 
 
-![login_screen](/public/Assets/login_screen.png)
+![login_screen](/public/Assets/login_page.jpg)
 
 ## Description 
 
-**It’s not only WHAT you know, it’s WHO you know.**  Bootcamp Connect is your one stop app to keep you connected with your cohort and help you find meaningful employment.
+**It’s not only WHAT you know, it’s WHO you know.**  
 
-This app is for Project 2 to make use of Express, Handlebars, MySql2, and Sequelize.  We incoporated Express-Sessions and Passport to add Authorization as well.
+* BootCampConnect™ helps new Bootcamp students connect with Bootcamp alumni
+* Users can post about jobs, collaborative opportunities or general coding questions
+
 
 ## Table of Contents (Optional)
 
@@ -18,9 +20,7 @@ This app is for Project 2 to make use of Express, Handlebars, MySql2, and Sequel
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
-* [Badges](#badges)
-* [Contributing](#contributing)
-* [Tests](#tests)
+
 
 
 ## ERD
@@ -35,39 +35,50 @@ Once you have done the above, get playing around to add users and posts.
 
 ## Usage 
 
-The landing page is Login.  If you have already signed up you can login here, if do not have an account, you need to Click Sign Up.  You must enter your First and Last name, an email address, and a password with at least 8 Characters. You will  
+The landing page is Login.  If you have already signed up you can login here, if do not have an account, you need to Click Sign Up.  You must enter your First and Last name, an email address, and a password with at least 8 Characters. You will then be directed to your Profile Page where you can edit your Location, Gihub, LinkedIn, and Bio fields.
 
+If you already had credentials you will be taken straight to the Dashboard where you will be able to select posts by category, go to profile page, or create a post.  To create a post, enter the Title, Body, and pick a Category.
+
+![profile_page](/public/Assets/profile_page.png)
+![edit_profile](/public/Assets/edit_profile.png)
+![dashboard](/public/Assets/dashboard.jpg)
 
 ## Credits
 
 Nick Mitchel | Steve Morris | Daniel Rojas | Chay Williams
 ------------ | ------------- | ------------ | -------------
-[Github]() | [Github]() | [Github]() | [Github]()
-
-@nmitchell34
+[Github](https://github.com/nmitchell34) | [Github](https://github.com/steveamorris) | [Github](https://github.com/danieldrojas) | [Github](https://github.com/Chayvw)
 
 
 
 ## License
 
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
+MIT License
+
+Copyright (c) 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
----
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 
-## Contributing
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
 
-## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
+
